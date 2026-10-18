@@ -1,0 +1,359 @@
+{
+  "common": {
+    "learnMore": "詳しく見る",
+    "viewSource": "ソースを見る",
+    "close": "閉じる",
+    "copy": "コピー",
+    "copied": "コピーしました",
+    "send": "送信",
+    "open": "開く",
+    "back": "戻る",
+    "getInTouch": "連絡する",
+    "previous": "前へ",
+    "next": "次へ",
+    "verify": "検証",
+    "loading": "読み込み中"
+  },
+  "nav": {
+    "about": "プロフィール",
+    "roadmap": "ロードマップ",
+    "labs": "ラボ",
+    "research": "研究",
+    "builds": "制作物",
+    "security": "セキュリティ",
+    "skills": "スキル",
+    "contact": "連絡先",
+    "terminal": "ターミナル",
+    "login": "ログイン"
+  },
+  "language": {
+    "label": "言語",
+    "notice": "機械支援による翻訳を表示しています。中心となる本文セクションは、ネイティブによる確認が済むまで英語のままです。"
+  },
+  "hero": {
+    "badge": "ML / AI のインターンと研究コラボを募集中",
+    "kicker": "サイバーセキュリティ · DevSecOps × AI 研究",
+    "titleA": "システムを守る。",
+    "titleB": "モデルを鍛える。",
+    "sub": "サイバーセキュリティを専攻し、作っては壊し、現実的な制約の下でコンピュータビジョンのモデルを訓練します。このサイトはその両方、堅牢なビルドであり研究のショーケースです。",
+    "ctaPrimary": "相談を始める",
+    "ctaResearch": "研究を見る",
+    "ctaTerminal": "ターミナル",
+    "modeNeural": "ニューラル",
+    "modeDefense": "防御",
+    "modeNeuralDesc": "ニューラルネットワーク探索",
+    "modeDefenseDesc": "脅威防御マトリクス",
+    "hint": "動かす · クリック · スクロール"
+  },
+  "status": {
+    "title": "セキュリティ状態（ライブ）",
+    "live": "ライブ",
+    "checking": "確認中…",
+    "csp": "CSP ノンス",
+    "rateLimit": "レート制限",
+    "turnstile": "ボット検査",
+    "tokens": "フォームトークン",
+    "relay": "メール中継",
+    "e2e": "E2E チャネル",
+    "region": "エッジ地域",
+    "headers": "強化ヘッダー",
+    "on": "有効",
+    "off": "無効",
+    "upstash": "Upstash",
+    "memory": "メモリ内",
+    "ready": "準備完了",
+    "standby": "待機中"
+  },
+  "roadmap": {
+    "index": "02 / 09",
+    "eyebrow": "学歴と実績のロードマップ",
+    "title": "歩みを、グラフで。",
+    "titleMuted": "学位・資格・研究。",
+    "lede": "AIUB でのサイバーセキュリティ専攻と機械学習の副専攻、その過程で得た資格、そしてそこから生まれた研究。ノードにカーソルを合わせるかタブで辿れます。",
+    "lanes": {
+      "education": "学歴",
+      "security": "セキュリティ",
+      "ai": "AI / ビジョン",
+      "goals": "準備中"
+    },
+    "legendEarned": "取得済み / 検証済み",
+    "legendGoal": "目標 · 準備中",
+    "inspectorPrompt": "ノードにカーソルを合わせるかタブで、その経緯と行き先を読めます。",
+    "verified": "検証済み",
+    "goal": "準備中",
+    "leadsTo": "次へ",
+    "nodes": {
+      "ssc": {
+        "title": "中等教育修了証（SSC）",
+        "detail": "Ideal School and College（ダッカ）。GPA 5.00 / 5.00。"
+      },
+      "hsc": {
+        "title": "高等中等教育修了証（HSC）",
+        "detail": "Birshreshtha Munshi Abdur Rouf Public College。GPA 5.00 / 5.00。"
+      },
+      "ielts": {
+        "title": "IELTS アカデミック",
+        "detail": "総合バンド 7.0、CEFR C1。実務で使える英語。"
+      },
+      "aiub": {
+        "title": "CSE 学士 · AIUB",
+        "detail": "American International University–Bangladesh。最終学年。"
+      },
+      "major-sec": {
+        "title": "専攻：サイバーセキュリティ",
+        "detail": "脅威モデリング、応用暗号、ネットワークとシステムのセキュリティ。"
+      },
+      "minor-ml": {
+        "title": "副専攻：機械学習",
+        "detail": "ディープラーニング、コンピュータビジョン、誠実なモデル評価。"
+      },
+      "ethical-hacker": {
+        "title": "Ethical Hacker",
+        "detail": "Cisco Networking Academy の修了証、2026年10月。"
+      },
+      "assessment": {
+        "title": "ネットワークセキュリティ評価",
+        "detail": "隔離された仮想ネットワークでの、記録された演習。"
+      },
+      "secure-auth": {
+        "title": "ゼロ知識のセキュアアプリ",
+        "detail": "セキュリティの主張を裏づけるための、エンドツーエンド暗号化の受信箱とチャット。"
+      },
+      "cnn": {
+        "title": "ゼロから作った CNN",
+        "detail": "事前学習済みバックボーンなしで検証精度 98%+ まで訓練した畳み込みネットワーク。"
+      },
+      "fer-paper": {
+        "title": "FER 研究論文",
+        "detail": "軽量でコスト考慮型の表情認識に関する共著論文。"
+      },
+      "oct": {
+        "title": "網膜 OCT 分類器",
+        "detail": "混同を考慮したマルチスケール CNN、進行中。"
+      },
+      "goal-security-plus": {
+        "title": "CompTIA Security+",
+        "detail": "準備中。未取得。"
+      },
+      "goal-ceh": {
+        "title": "CEH",
+        "detail": "次に予定。未取得。"
+      },
+      "goal-thm": {
+        "title": "TryHackMe の学習",
+        "detail": "継続中の実践演習。資格ではなく学習プラットフォームです。"
+      }
+    },
+    "tags": {
+      "finalYear": "最終学年",
+      "major": "専攻",
+      "minor": "副専攻",
+      "labWriteup": "演習レポート",
+      "e2eApp": "E2Eアプリ",
+      "inProgress": "進行中",
+      "inPreparation": "準備中",
+      "planned": "予定",
+      "ongoing": "継続中"
+    }
+  },
+  "labs": {
+    "index": "03 / 09",
+    "eyebrow": "ハンズオン・ラボ",
+    "title": "手を動かして確かめる。",
+    "titleMuted": "すべてブラウザ内で動きます。",
+    "lede": "安全で自己完結した3つのウィジェット。実際のホストには一切触れず、端末の外へ何も送りません。",
+    "tabs": {
+      "firewall": "パケットフィルタ",
+      "fer": "モデルの確信度",
+      "headers": "このサイトのヘッダー"
+    },
+    "firewall": {
+      "title": "ファイアウォール・ポリシー演習",
+      "intro": "固定のサンプルパケットに対して、先頭一致の許可/拒否ルールを書きます。どのルールにも一致しないものは暗黙のデフォルト拒否が受け止めます。本物のパケットフィルタと同じです。到達させるべきものだけを許可しましょう。",
+      "ruleColumns": {
+        "action": "動作",
+        "direction": "方向",
+        "protocol": "プロト",
+        "port": "ポート"
+      },
+      "addRule": "ルールを追加",
+      "reset": "リセット",
+      "allow": "許可",
+      "deny": "拒否",
+      "any": "任意",
+      "in": "受信",
+      "out": "送信",
+      "trafficTitle": "サンプル通信",
+      "allowed": "許可",
+      "denied": "拒否",
+      "byDefault": "デフォルト拒否",
+      "byRule": "ルール",
+      "scoreTitle": "ポリシーの結果",
+      "aligned": "／{total} が安全な基準に一致",
+      "exposed": "過剰公開",
+      "exposedHint": "慎重なデフォルト拒否なら遮断するものを許可してしまうポリシー。",
+      "clean": "過剰公開なし。クリーンなポリシーです。",
+      "packets": {
+        "https": "受信Webトラフィック（HTTPS）",
+        "ssh": "インターネットからの受信リモートシェル（SSH）",
+        "rdp": "受信リモートデスクトップ（RDP）",
+        "dns": "受信DNSクエリ",
+        "telnet": "受信Telnet（平文）",
+        "egress-https": "送信API呼び出し（HTTPS）",
+        "ping": "受信エコー要求（ping）",
+        "mssql": "受信データベースポート（MSSQL）"
+      }
+    },
+    "fer": {
+      "title": "確信度しきい値エクスプローラ",
+      "intro": "7つの標準クラスに対する表情モデルの固定の出力例です。しきい値をドラッグすると、それを下回る場合は推測せず判断を保留します。これが研究の核心であるコスト考慮型のトレードオフです。",
+      "threshold": "判定しきい値",
+      "committed": "判定",
+      "abstains": "保留 — しきい値未満",
+      "margin": "上位2クラスの差",
+      "liveTitle": "ライブモード",
+      "liveOff": "固定の例を使う",
+      "liveOn": "カメラを使う",
+      "liveNote": "カメラの映像は端末内でのみ処理され、ブラウザの外へ出ません。",
+      "cameraStart": "カメラを有効化",
+      "cameraStop": "カメラを停止",
+      "cameraDenied": "カメラへのアクセスが拒否されました。",
+      "noFace": "まだ顔が検出されていません。",
+      "emotions": {
+        "neutral": "無表情",
+        "happy": "喜び",
+        "sad": "悲しみ",
+        "surprise": "驚き",
+        "fear": "恐れ",
+        "disgust": "嫌悪",
+        "anger": "怒り"
+      }
+    },
+    "headers": {
+      "title": "このサイトの応答ヘッダーを検査",
+      "intro": "今読んでいるまさにこのページのライブ検査です。/api/status と応答ヘッダーを取得し、セキュリティ状態を採点します。このサイトのすべての主張は検証できることを目指しています。",
+      "run": "監査を実行",
+      "running": "監査中…",
+      "present": "あり",
+      "missing": "なし",
+      "grade": "評価",
+      "postureTitle": "実行時の状態",
+      "note": "秘密情報は一切公開されず、各保護が有効かどうかだけを示します。"
+    }
+  },
+  "certs": {
+    "index": "06 / 09",
+    "eyebrow": "資格・証明",
+    "title": "取得済み、そして進行中。",
+    "titleMuted": "はっきり分けています。",
+    "lede": "検証済みのものは資格として示します。目標はそのように明記します。ここにあるバッジが、持っていないものを主張することはありません。",
+    "earned": "検証済みの資格",
+    "goals": "準備中",
+    "goalNote": "これらは表明した目標であり、保有する資格ではありません。方向性を示すためのもので、認定を示唆するものではありません。",
+    "items": {
+      "ethical-hacker": {
+        "title": "Ethical Hacker",
+        "blurb": "Cisco Networking Academy の修了証。"
+      },
+      "ielts": {
+        "title": "IELTS アカデミック · 7.0（C1）",
+        "blurb": "英語力、総合バンド 7.0。"
+      },
+      "goal-security-plus": {
+        "title": "CompTIA Security+",
+        "blurb": "基礎的なセキュリティ認定 — 準備中。"
+      },
+      "goal-ceh": {
+        "title": "Certified Ethical Hacker",
+        "blurb": "EC-Council の認定 — 予定。"
+      },
+      "goal-thm": {
+        "title": "TryHackMe の学習",
+        "blurb": "継続中の実践演習であり、資格ではありません。"
+      }
+    }
+  },
+  "contact": {
+    "index": "09 / 09",
+    "eyebrow": "堅牢な連絡窓口",
+    "title": "出したいモデルがある、",
+    "titleMuted": "あるいは賢くしたいシステムがある？",
+    "lede": "インターン、研究アシスタント、共同研究、フリーランス案件。この窓口はレート制限・ボット検査・入力の無害化を一貫して行います。",
+    "name": "名前",
+    "email": "メール",
+    "company": "会社 / 研究室",
+    "optional": "（任意）",
+    "message": "メッセージ",
+    "namePh": "Ada Lovelace",
+    "emailPh": "you@company.com",
+    "companyPh": "どこからのご連絡か",
+    "messagePh": "役割、課題、スケジュール…",
+    "sendStd": "送信する",
+    "sendE2e": "暗号化して送信",
+    "sending": "送信中",
+    "encrypting": "暗号化中",
+    "e2eTitle": "エンドツーエンド暗号化",
+    "e2eOn": "有効",
+    "e2eOff": "無効",
+    "e2eDesc": "メッセージは端末を離れる前にこのブラウザ内で暗号化されます。中継のため小さなウィンドウが一瞬開きます。",
+    "channelStd": "経路：TLS → 無害化 → レート制限 → 中継",
+    "channelE2e": "経路：RSA-OAEP + AES-256-GCM → ゼロ知識受信箱",
+    "ready": "準備完了",
+    "transmitting": "送信中",
+    "okStd": "受け取りました。1営業日以内に返信します。",
+    "okE2e": "エンドツーエンド暗号化で届きました。私のログインだけが復号できます。",
+    "okFallback": "標準の中継で受け取りました（暗号化経路に到達できませんでした）。",
+    "preferEmail": "メールの方がよいですか？",
+    "writeDirectly": "直接書く",
+    "botPending": "送信するにはボット検査を完了してください。",
+    "errors": {
+      "rate-limited": "この接続からの送信が多すぎます。1分ほどお待ちください。",
+      "bot-check": "ボット検査を通過できませんでした。もう一度お試しください。",
+      "token-expired": "フォームのセッションが期限切れです。再送してください。",
+      "token-invalid": "フォームのセッションを確認できませんでした。再読み込みしてお試しください。",
+      "invalid": "いくつかの項目をご確認ください。",
+      "not-configured": "メール中継がまだ設定されていません。",
+      "delivery": "送信に失敗しました。直接メールしてください。",
+      "forbidden": "リクエストがブロックされました。",
+      "name.short": "お名前を教えてください。",
+      "name.long": "名前が少し長すぎます。",
+      "email.invalid": "メールアドレスが正しくないようです。",
+      "company.long": "少し長すぎます。",
+      "message.short": "もう少し詳しくお願いします（20文字以上）。",
+      "message.long": "4,000文字以内でお願いします。"
+    }
+  },
+  "footer": {
+    "index": "09 / 09",
+    "roles": "サイバーセキュリティ · DevSecOps · AI 研究",
+    "based": "{location} を拠点に、どこのチームとも仕事をします。",
+    "host": "ホスト",
+    "env": "環境",
+    "commit": "コミット",
+    "rendered": "生成",
+    "stack": "スタック",
+    "secured": "保護：",
+    "terminalHint": "どこでも ` でターミナルを開けます",
+    "rights": "無断転載を禁じます。"
+  },
+  "terminal": {
+    "boot": "ador-os v3.0 · セキュアシェル · {location}",
+    "hint": "help でコマンド一覧。↑/↓ で履歴、Tab で補完。",
+    "cmd": {
+      "help": "利用できるコマンドを表示",
+      "about": "私について、セキュリティ + AI",
+      "roadmap": "学歴と実績のロードマップ",
+      "certs": "取得済み・進行中の資格",
+      "security-audit": "このサイトのライブなセキュリティ状態",
+      "labs": "ハンズオン・ラボへ",
+      "research": "論文と進行中の研究",
+      "projects": "ケーススタディとライブなリポジトリ",
+      "contact": "連絡方法",
+      "langs": "表示言語を切り替える",
+      "hire": "連絡フォームへ",
+      "sound": "効果音の切り替え",
+      "clear": "画面をクリア",
+      "exit": "ターミナルを閉じる"
+    }
+  }
+}

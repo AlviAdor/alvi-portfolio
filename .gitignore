@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+.vercel
+.open-next
+.wrangler
+.env*.local
+.env
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+
+# rendered walkthrough videos are large; publish them to YouTube/LinkedIn instead
+media/walkthrough/*.mp4
+.media-work/
+.media-tools/

@@ -1,0 +1,359 @@
+{
+  "common": {
+    "learnMore": "Saber más",
+    "viewSource": "Ver código",
+    "close": "Cerrar",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "send": "Enviar",
+    "open": "Abrir",
+    "back": "Volver",
+    "getInTouch": "Hablemos",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "verify": "Verificar",
+    "loading": "Cargando"
+  },
+  "nav": {
+    "about": "Perfil",
+    "roadmap": "Trayectoria",
+    "labs": "Labs",
+    "research": "Investigación",
+    "builds": "Proyectos",
+    "security": "Seguridad",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "terminal": "Terminal",
+    "login": "Acceder"
+  },
+  "language": {
+    "label": "Idioma",
+    "notice": "Estás viendo una traducción asistida por máquina. Las secciones narrativas principales permanecen en inglés a la espera de una revisión nativa."
+  },
+  "hero": {
+    "badge": "Disponible para prácticas de ML / IA y colaboraciones de investigación",
+    "kicker": "Ciberseguridad · DevSecOps × investigación en IA",
+    "titleA": "Aseguro los sistemas.",
+    "titleB": "Entreno los modelos.",
+    "sub": "Estudiante con especialidad en ciberseguridad que construye y rompe, y entrena modelos de visión por computador bajo restricciones reales. Este sitio es ambas cosas: una build endurecida y una vitrina de investigación.",
+    "ctaPrimary": "Iniciar una conversación",
+    "ctaResearch": "Ver la investigación",
+    "ctaTerminal": "Terminal",
+    "modeNeural": "Neuronal",
+    "modeDefense": "Defensa",
+    "modeNeuralDesc": "Explorador de red neuronal",
+    "modeDefenseDesc": "Matriz de defensa ante amenazas",
+    "hint": "mueve · clic · desplaza"
+  },
+  "status": {
+    "title": "Estado de seguridad en vivo",
+    "live": "en vivo",
+    "checking": "comprobando…",
+    "csp": "Nonce CSP",
+    "rateLimit": "Límite de peticiones",
+    "turnstile": "Verificación de bots",
+    "tokens": "Tokens de formulario",
+    "relay": "Relé de correo",
+    "e2e": "Canal E2E",
+    "region": "Región edge",
+    "headers": "Cabeceras endurecidas",
+    "on": "activo",
+    "off": "inactivo",
+    "upstash": "Upstash",
+    "memory": "en memoria",
+    "ready": "listo",
+    "standby": "en espera"
+  },
+  "roadmap": {
+    "index": "02 / 09",
+    "eyebrow": "Trayectoria académica y de méritos",
+    "title": "El camino, como un grafo.",
+    "titleMuted": "Grado, credenciales, investigación.",
+    "lede": "Especialidad en ciberseguridad con mención en aprendizaje automático en AIUB, los certificados obtenidos por el camino y la investigación a la que llevaron. Pasa el cursor o tabula por un nodo para seguirlo.",
+    "lanes": {
+      "education": "Formación",
+      "security": "Seguridad",
+      "ai": "IA / Visión",
+      "goals": "En preparación"
+    },
+    "legendEarned": "Obtenido / verificado",
+    "legendGoal": "Objetivo · en preparación",
+    "inspectorPrompt": "Pasa el cursor o tabula por un nodo para leer su historia y ver adónde lleva.",
+    "verified": "Verificado",
+    "goal": "En preparación",
+    "leadsTo": "Lleva a",
+    "nodes": {
+      "ssc": {
+        "title": "Certificado de Secundaria",
+        "detail": "Ideal School and College, Dhaka. Nota 5,00 / 5,00."
+      },
+      "hsc": {
+        "title": "Certificado de Bachillerato",
+        "detail": "Birshreshtha Munshi Abdur Rouf Public College. Nota 5,00 / 5,00."
+      },
+      "ielts": {
+        "title": "IELTS Académico",
+        "detail": "Puntuación global 7.0, nivel MCER C1. Inglés como lengua de trabajo."
+      },
+      "aiub": {
+        "title": "Grado en CSE · AIUB",
+        "detail": "American International University–Bangladesh. Último curso."
+      },
+      "major-sec": {
+        "title": "Especialidad: Ciberseguridad",
+        "detail": "Modelado de amenazas, criptografía aplicada, seguridad de redes y sistemas."
+      },
+      "minor-ml": {
+        "title": "Mención: Aprendizaje Automático",
+        "detail": "Aprendizaje profundo, visión por computador y evaluación honesta de modelos."
+      },
+      "ethical-hacker": {
+        "title": "Ethical Hacker",
+        "detail": "Certificado de finalización de Cisco Networking Academy, octubre de 2026."
+      },
+      "assessment": {
+        "title": "Evaluación de seguridad de red",
+        "detail": "Un ejercicio de laboratorio documentado en una red virtual aislada."
+      },
+      "secure-auth": {
+        "title": "App segura de conocimiento cero",
+        "detail": "Una bandeja de entrada y un chat cifrados de extremo a extremo, para respaldar las afirmaciones de seguridad."
+      },
+      "cnn": {
+        "title": "CNN desde cero",
+        "detail": "Una red convolucional entrenada a más del 98% de validación sin base preentrenada."
+      },
+      "fer-paper": {
+        "title": "Artículo de investigación FER",
+        "detail": "Trabajo en coautoría sobre reconocimiento de emociones faciales ligero y sensible al coste."
+      },
+      "oct": {
+        "title": "Clasificador de OCT retiniana",
+        "detail": "Una CNN multiescala consciente de la confusión, en curso."
+      },
+      "goal-security-plus": {
+        "title": "CompTIA Security+",
+        "detail": "En preparación. Aún no obtenido."
+      },
+      "goal-ceh": {
+        "title": "CEH",
+        "detail": "Previsto a continuación. Aún no obtenido."
+      },
+      "goal-thm": {
+        "title": "Ruta TryHackMe",
+        "detail": "Práctica continua. Una plataforma de aprendizaje, no una credencial."
+      }
+    },
+    "tags": {
+      "finalYear": "último curso",
+      "major": "especialidad",
+      "minor": "mención",
+      "labWriteup": "informe de laboratorio",
+      "e2eApp": "app E2E",
+      "inProgress": "en curso",
+      "inPreparation": "en preparación",
+      "planned": "previsto",
+      "ongoing": "en marcha"
+    }
+  },
+  "labs": {
+    "index": "03 / 09",
+    "eyebrow": "Labs prácticos",
+    "title": "Pruébalo tú mismo.",
+    "titleMuted": "Todo se ejecuta en tu navegador.",
+    "lede": "Tres widgets seguros y autónomos. Nada de esto toca un host real ni envía nada fuera de tu dispositivo.",
+    "tabs": {
+      "firewall": "Filtro de paquetes",
+      "fer": "Confianza del modelo",
+      "headers": "Cabeceras de este sitio"
+    },
+    "firewall": {
+      "title": "Entorno de políticas de firewall",
+      "intro": "Escribe reglas permitir/denegar de primera coincidencia sobre un conjunto fijo de paquetes de muestra. Una denegación por defecto implícita atrapa lo que ninguna regla cubre, como un filtro de paquetes real. Busca permitir solo lo que debe ser accesible.",
+      "ruleColumns": {
+        "action": "Acción",
+        "direction": "Dir",
+        "protocol": "Proto",
+        "port": "Puerto"
+      },
+      "addRule": "Añadir regla",
+      "reset": "Restablecer",
+      "allow": "permitir",
+      "deny": "denegar",
+      "any": "cualquiera",
+      "in": "entr",
+      "out": "sal",
+      "trafficTitle": "Tráfico de muestra",
+      "allowed": "permitido",
+      "denied": "denegado",
+      "byDefault": "deny por defecto",
+      "byRule": "regla",
+      "scoreTitle": "Resultado de la política",
+      "aligned": "de {total} coinciden con una base segura",
+      "exposed": "sobreexpuesto",
+      "exposedHint": "Una política que permite algo que una denegación por defecto cuidadosa bloquearía.",
+      "clean": "Sin sobreexposición. Política limpia.",
+      "packets": {
+        "https": "Tráfico web entrante (HTTPS)",
+        "ssh": "Shell remoto entrante (SSH) desde internet",
+        "rdp": "Escritorio remoto entrante (RDP)",
+        "dns": "Consulta DNS entrante",
+        "telnet": "Telnet entrante (texto plano)",
+        "egress-https": "Llamada API saliente (HTTPS)",
+        "ping": "Echo entrante (ping)",
+        "mssql": "Puerto de base de datos entrante (MSSQL)"
+      }
+    },
+    "fer": {
+      "title": "Explorador del umbral de confianza",
+      "intro": "Una salida de ejemplo fija de un modelo de emoción facial sobre las siete clases estándar. Arrastra el umbral: por debajo, el sistema se abstiene en vez de adivinar. Este es el equilibrio sensible al coste del que trata la investigación.",
+      "threshold": "Umbral de decisión",
+      "committed": "Se decide por",
+      "abstains": "Se abstiene — por debajo del umbral",
+      "margin": "Margen entre los dos primeros",
+      "liveTitle": "Modo en vivo",
+      "liveOff": "Usar el ejemplo fijo",
+      "liveOn": "Usar mi cámara",
+      "liveNote": "Los fotogramas de la cámara se procesan solo en tu dispositivo y nunca salen del navegador.",
+      "cameraStart": "Activar cámara",
+      "cameraStop": "Detener cámara",
+      "cameraDenied": "Se denegó el acceso a la cámara.",
+      "noFace": "Aún no se detecta ningún rostro.",
+      "emotions": {
+        "neutral": "Neutral",
+        "happy": "Alegría",
+        "sad": "Tristeza",
+        "surprise": "Sorpresa",
+        "fear": "Miedo",
+        "disgust": "Asco",
+        "anger": "Enfado"
+      }
+    },
+    "headers": {
+      "title": "Audita las cabeceras de respuesta de este sitio",
+      "intro": "Una comprobación en vivo de la misma página que estás leyendo. Consulta /api/status y las cabeceras de respuesta, y califica la postura de seguridad. Toda afirmación de este sitio debe poder comprobarse.",
+      "run": "Ejecutar auditoría",
+      "running": "Auditando…",
+      "present": "presente",
+      "missing": "ausente",
+      "grade": "Nota",
+      "postureTitle": "Postura en ejecución",
+      "note": "No se expone ningún secreto, solo si cada protección está activada."
+    }
+  },
+  "certs": {
+    "index": "06 / 09",
+    "eyebrow": "Credenciales",
+    "title": "Obtenidas y en curso.",
+    "titleMuted": "Claramente separadas.",
+    "lede": "Lo verificado se muestra como credencial. Lo que es un objetivo se etiqueta como tal. Ninguna insignia aquí reclama algo que no se posee.",
+    "earned": "Credenciales verificadas",
+    "goals": "En preparación",
+    "goalNote": "Son objetivos declarados, no credenciales obtenidas. Se listan para mostrar dirección, nunca para dar a entender una certificación.",
+    "items": {
+      "ethical-hacker": {
+        "title": "Ethical Hacker",
+        "blurb": "Certificado de finalización de Cisco Networking Academy."
+      },
+      "ielts": {
+        "title": "IELTS Académico · 7.0 (C1)",
+        "blurb": "Dominio del inglés, puntuación global 7.0."
+      },
+      "goal-security-plus": {
+        "title": "CompTIA Security+",
+        "blurb": "Certificación base de seguridad — en preparación."
+      },
+      "goal-ceh": {
+        "title": "Certified Ethical Hacker",
+        "blurb": "Credencial de EC-Council — prevista."
+      },
+      "goal-thm": {
+        "title": "Ruta TryHackMe",
+        "blurb": "Práctica continua, no un certificado."
+      }
+    }
+  },
+  "contact": {
+    "index": "09 / 09",
+    "eyebrow": "Contacto endurecido",
+    "title": "¿Tienes un modelo que lanzar",
+    "titleMuted": "o un sistema que hacer más inteligente?",
+    "lede": "Prácticas, ayudantías de investigación, colaboraciones, proyectos freelance. El canal tiene límite de peticiones, verificación de bots y saneamiento de extremo a extremo.",
+    "name": "Nombre",
+    "email": "Correo",
+    "company": "Empresa / laboratorio",
+    "optional": "(opcional)",
+    "message": "Mensaje",
+    "namePh": "Ada Lovelace",
+    "emailPh": "tu@empresa.com",
+    "companyPh": "Desde dónde escribes",
+    "messagePh": "El puesto, el problema, los plazos…",
+    "sendStd": "Enviar transmisión",
+    "sendE2e": "Enviar cifrado",
+    "sending": "Enviando",
+    "encrypting": "Cifrando",
+    "e2eTitle": "Cifrado de extremo a extremo",
+    "e2eOn": "activo",
+    "e2eOff": "inactivo",
+    "e2eDesc": "Tu mensaje se cifra en este navegador antes de salir de tu dispositivo. Se abre brevemente una pequeña ventana para transmitirlo.",
+    "channelStd": "canal: TLS → saneamiento → límite → relé",
+    "channelE2e": "canal: RSA-OAEP + AES-256-GCM → bandeja de conocimiento cero",
+    "ready": "listo",
+    "transmitting": "transmitiendo",
+    "okStd": "Recibido. Responderé en un día laborable.",
+    "okE2e": "Entregado con cifrado de extremo a extremo. Solo mi propio acceso puede descifrarlo.",
+    "okFallback": "Recibido por el relé estándar (el canal cifrado no estaba disponible).",
+    "preferEmail": "¿Prefieres el correo?",
+    "writeDirectly": "Escríbeme directamente",
+    "botPending": "Completa la verificación de bots para enviar.",
+    "errors": {
+      "rate-limited": "Demasiados mensajes desde esta conexión. Espera un minuto.",
+      "bot-check": "La verificación de bots no pasó. Inténtalo de nuevo.",
+      "token-expired": "La sesión del formulario caducó. Reenvía, por favor.",
+      "token-invalid": "No se pudo verificar la sesión del formulario. Recarga y reinténtalo.",
+      "invalid": "Algunos campos necesitan atención.",
+      "not-configured": "El relé de correo aún no está configurado.",
+      "delivery": "La entrega falló. Escríbeme directamente, por favor.",
+      "forbidden": "Petición bloqueada.",
+      "name.short": "Dime tu nombre.",
+      "name.long": "Ese nombre es un poco largo.",
+      "email.invalid": "Ese correo no parece correcto.",
+      "company.long": "Es un poco largo.",
+      "message.short": "Un poco más de detalle, por favor (20+ caracteres).",
+      "message.long": "Mantenlo por debajo de 4.000 caracteres, por favor."
+    }
+  },
+  "footer": {
+    "index": "09 / 09",
+    "roles": "Ciberseguridad · DevSecOps · investigación en IA",
+    "based": "Con base en {location}, trabajando con equipos en cualquier lugar.",
+    "host": "Host",
+    "env": "Entorno",
+    "commit": "Commit",
+    "rendered": "Renderizado",
+    "stack": "Stack",
+    "secured": "Protegido por",
+    "terminalHint": "Pulsa ` en cualquier parte para la terminal",
+    "rights": "Todos los derechos reservados."
+  },
+  "terminal": {
+    "boot": "ador-os v3.0 · shell seguro · {location}",
+    "hint": "Escribe help para listar comandos. ↑/↓ historial, Tab autocompleta.",
+    "cmd": {
+      "help": "listar comandos disponibles",
+      "about": "quién soy, seguridad + IA",
+      "roadmap": "trayectoria académica y de méritos",
+      "certs": "credenciales obtenidas y en curso",
+      "security-audit": "postura de seguridad en vivo de este sitio",
+      "labs": "ir a los labs prácticos",
+      "research": "publicaciones y trabajo en curso",
+      "projects": "casos de estudio y repos en vivo",
+      "contact": "formas de contactarme",
+      "langs": "cambiar el idioma de la interfaz",
+      "hire": "ir al formulario de contacto",
+      "sound": "activar/desactivar el sonido",
+      "clear": "limpiar la pantalla",
+      "exit": "cerrar la terminal"
+    }
+  }
+}

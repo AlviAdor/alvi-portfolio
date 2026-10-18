@@ -1,0 +1,359 @@
+{
+  "common": {
+    "learnMore": "Learn more",
+    "viewSource": "View source",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied",
+    "send": "Send",
+    "open": "Open",
+    "back": "Back",
+    "getInTouch": "Get in touch",
+    "previous": "Previous",
+    "next": "Next",
+    "verify": "Verify",
+    "loading": "Loading"
+  },
+  "nav": {
+    "about": "About",
+    "roadmap": "Roadmap",
+    "labs": "Labs",
+    "research": "Research",
+    "builds": "Builds",
+    "security": "Security",
+    "skills": "Skills",
+    "contact": "Contact",
+    "terminal": "Terminal",
+    "login": "Login"
+  },
+  "language": {
+    "label": "Language",
+    "notice": "You're viewing a machine-assisted translation. The core narrative sections stay in English pending a native review."
+  },
+  "hero": {
+    "badge": "Open to ML / AI internships & research collaborations",
+    "kicker": "Cybersecurity · DevSecOps × AI research",
+    "titleA": "I secure the systems.",
+    "titleB": "I train the models.",
+    "sub": "A cybersecurity major who builds and breaks, and trains computer-vision models under real constraints. This site is both: a hardened build and a research showcase.",
+    "ctaPrimary": "Start a conversation",
+    "ctaResearch": "See the research",
+    "ctaTerminal": "Terminal",
+    "modeNeural": "Neural",
+    "modeDefense": "Defense",
+    "modeNeuralDesc": "Neural-network explorer",
+    "modeDefenseDesc": "Threat-defense matrix",
+    "hint": "move · click · scroll"
+  },
+  "status": {
+    "title": "Live security posture",
+    "live": "live",
+    "checking": "checking…",
+    "csp": "CSP nonce",
+    "rateLimit": "Rate limit",
+    "turnstile": "Bot check",
+    "tokens": "Form tokens",
+    "relay": "Mail relay",
+    "e2e": "E2E channel",
+    "region": "Edge region",
+    "headers": "Hardened headers",
+    "on": "on",
+    "off": "off",
+    "upstash": "Upstash",
+    "memory": "in-memory",
+    "ready": "ready",
+    "standby": "standby"
+  },
+  "roadmap": {
+    "index": "02 / 09",
+    "eyebrow": "Academic & merit roadmap",
+    "title": "The path, as a graph.",
+    "titleMuted": "Degree, credentials, research.",
+    "lede": "Cybersecurity major with a machine-learning minor at AIUB, the certificates earned along the way, and the research it led to. Hover or tab a node to trace it.",
+    "lanes": {
+      "education": "Education",
+      "security": "Security",
+      "ai": "AI / Vision",
+      "goals": "In preparation"
+    },
+    "legendEarned": "Earned / verified",
+    "legendGoal": "Goal · in preparation",
+    "inspectorPrompt": "Hover or tab a node to read its story and follow where it leads.",
+    "verified": "Verified",
+    "goal": "In preparation",
+    "leadsTo": "Leads to",
+    "nodes": {
+      "ssc": {
+        "title": "Secondary School Certificate",
+        "detail": "Ideal School and College, Dhaka. GPA 5.00 / 5.00."
+      },
+      "hsc": {
+        "title": "Higher Secondary Certificate",
+        "detail": "Birshreshtha Munshi Abdur Rouf Public College. GPA 5.00 / 5.00."
+      },
+      "ielts": {
+        "title": "IELTS Academic",
+        "detail": "Overall band 7.0, CEFR C1. English as a working language."
+      },
+      "aiub": {
+        "title": "B.Sc. in CSE · AIUB",
+        "detail": "American International University–Bangladesh. Final year."
+      },
+      "major-sec": {
+        "title": "Major: Cybersecurity",
+        "detail": "Threat modelling, applied cryptography, network and system security."
+      },
+      "minor-ml": {
+        "title": "Minor: Machine Learning",
+        "detail": "Deep learning, computer vision and honest model evaluation."
+      },
+      "ethical-hacker": {
+        "title": "Ethical Hacker",
+        "detail": "Cisco Networking Academy completion certificate, October 2026."
+      },
+      "assessment": {
+        "title": "Network security assessment",
+        "detail": "A documented lab exercise in an isolated virtual network."
+      },
+      "secure-auth": {
+        "title": "Zero-knowledge secure app",
+        "detail": "An end-to-end encrypted inbox and chat, built to back the security claims."
+      },
+      "cnn": {
+        "title": "CNN from scratch",
+        "detail": "A convolutional network trained to 98%+ validation with no pretrained backbone."
+      },
+      "fer-paper": {
+        "title": "FER research paper",
+        "detail": "Co-authored work on lightweight, cost-sensitive facial emotion recognition."
+      },
+      "oct": {
+        "title": "Retinal OCT classifier",
+        "detail": "A confusion-aware multi-scale CNN, in progress."
+      },
+      "goal-security-plus": {
+        "title": "CompTIA Security+",
+        "detail": "In preparation. Not yet held."
+      },
+      "goal-ceh": {
+        "title": "CEH",
+        "detail": "Planned next. Not yet held."
+      },
+      "goal-thm": {
+        "title": "TryHackMe path",
+        "detail": "Ongoing hands-on practice. A learning platform, not a credential."
+      }
+    },
+    "tags": {
+      "finalYear": "final year",
+      "major": "major",
+      "minor": "minor",
+      "labWriteup": "lab write-up",
+      "e2eApp": "E2E app",
+      "inProgress": "in progress",
+      "inPreparation": "in preparation",
+      "planned": "planned",
+      "ongoing": "ongoing"
+    }
+  },
+  "labs": {
+    "index": "03 / 09",
+    "eyebrow": "Hands-on labs",
+    "title": "Get a feel for it.",
+    "titleMuted": "Everything runs in your browser.",
+    "lede": "Three safe, self-contained widgets. Nothing here touches a real host or sends anything off your device.",
+    "tabs": {
+      "firewall": "Packet filter",
+      "fer": "Model confidence",
+      "headers": "This site's headers"
+    },
+    "firewall": {
+      "title": "Firewall policy sandbox",
+      "intro": "Write first-match allow/deny rules against a fixed set of sample packets. An implicit default-deny catches anything no rule matches, just like a real packet filter. Aim to permit only what should be reachable.",
+      "ruleColumns": {
+        "action": "Action",
+        "direction": "Dir",
+        "protocol": "Proto",
+        "port": "Port"
+      },
+      "addRule": "Add rule",
+      "reset": "Reset policy",
+      "allow": "allow",
+      "deny": "deny",
+      "any": "any",
+      "in": "in",
+      "out": "out",
+      "trafficTitle": "Sample traffic",
+      "allowed": "allowed",
+      "denied": "denied",
+      "byDefault": "default-deny",
+      "byRule": "rule",
+      "scoreTitle": "Policy result",
+      "aligned": "of {total} match a safe baseline",
+      "exposed": "over-exposed",
+      "exposedHint": "A policy that allows something a careful default-deny would block.",
+      "clean": "No over-exposure. Clean policy.",
+      "packets": {
+        "https": "Inbound web traffic (HTTPS)",
+        "ssh": "Inbound remote shell (SSH) from the internet",
+        "rdp": "Inbound remote desktop (RDP)",
+        "dns": "Inbound DNS lookup",
+        "telnet": "Inbound Telnet (cleartext)",
+        "egress-https": "Outbound API call (HTTPS)",
+        "ping": "Inbound echo request (ping)",
+        "mssql": "Inbound database port (MSSQL)"
+      }
+    },
+    "fer": {
+      "title": "Confidence threshold explorer",
+      "intro": "A fixed example output from a facial-emotion model over the seven standard classes. Drag the threshold: below it the system abstains instead of guessing. This is the cost-sensitive trade-off the research is about.",
+      "threshold": "Decision threshold",
+      "committed": "Commits to",
+      "abstains": "Abstains — below threshold",
+      "margin": "Top-two margin",
+      "liveTitle": "Live mode",
+      "liveOff": "Use the fixed example",
+      "liveOn": "Use my camera",
+      "liveNote": "Camera frames are processed on your device only and never leave the browser.",
+      "cameraStart": "Enable camera",
+      "cameraStop": "Stop camera",
+      "cameraDenied": "Camera access was declined.",
+      "noFace": "No face detected yet.",
+      "emotions": {
+        "neutral": "Neutral",
+        "happy": "Happy",
+        "sad": "Sad",
+        "surprise": "Surprise",
+        "fear": "Fear",
+        "disgust": "Disgust",
+        "anger": "Anger"
+      }
+    },
+    "headers": {
+      "title": "Audit this site's response headers",
+      "intro": "A live check of the very page you're reading. It fetches /api/status and the response headers, and grades the security posture. Every claim on this site is meant to be checkable.",
+      "run": "Run audit",
+      "running": "Auditing…",
+      "present": "present",
+      "missing": "missing",
+      "grade": "Grade",
+      "postureTitle": "Runtime posture",
+      "note": "No secrets are exposed — only whether each protection is switched on."
+    }
+  },
+  "certs": {
+    "index": "06 / 09",
+    "eyebrow": "Credentials",
+    "title": "Earned, and in progress.",
+    "titleMuted": "Clearly separated.",
+    "lede": "What's verified is shown as a credential. What's a goal is labelled as one. No badge here claims something that isn't held.",
+    "earned": "Verified credentials",
+    "goals": "In preparation",
+    "goalNote": "These are stated targets, not credentials held. They're listed to show direction, never to imply certification.",
+    "items": {
+      "ethical-hacker": {
+        "title": "Ethical Hacker",
+        "blurb": "Cisco Networking Academy completion certificate."
+      },
+      "ielts": {
+        "title": "IELTS Academic · 7.0 (C1)",
+        "blurb": "English proficiency, overall band 7.0."
+      },
+      "goal-security-plus": {
+        "title": "CompTIA Security+",
+        "blurb": "Baseline security certification — in preparation."
+      },
+      "goal-ceh": {
+        "title": "Certified Ethical Hacker",
+        "blurb": "EC-Council credential — planned."
+      },
+      "goal-thm": {
+        "title": "TryHackMe path",
+        "blurb": "Ongoing hands-on practice, not a certificate."
+      }
+    }
+  },
+  "contact": {
+    "index": "09 / 09",
+    "eyebrow": "Hardened contact",
+    "title": "Have a model to ship",
+    "titleMuted": "or a system to make smarter?",
+    "lede": "Internships, research assistantships, collaborations, freelance builds. The channel is rate-limited, bot-checked and sanitised end to end.",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company / lab",
+    "optional": "(optional)",
+    "message": "Message",
+    "namePh": "Ada Lovelace",
+    "emailPh": "you@company.com",
+    "companyPh": "Where you're writing from",
+    "messagePh": "The role, the problem, the timeline…",
+    "sendStd": "Send transmission",
+    "sendE2e": "Send encrypted",
+    "sending": "Sending",
+    "encrypting": "Encrypting",
+    "e2eTitle": "End-to-end encrypt",
+    "e2eOn": "on",
+    "e2eOff": "off",
+    "e2eDesc": "Your message is encrypted in this browser before it leaves your device. A small window opens briefly to relay it.",
+    "channelStd": "channel: TLS → sanitise → rate-limit → relay",
+    "channelE2e": "channel: RSA-OAEP + AES-256-GCM → zero-knowledge inbox",
+    "ready": "ready",
+    "transmitting": "transmitting",
+    "okStd": "Received. I'll reply within a working day.",
+    "okE2e": "Delivered end-to-end encrypted. Only my own login can decrypt it.",
+    "okFallback": "Received via the standard relay (the encrypted channel was unreachable).",
+    "preferEmail": "Prefer email?",
+    "writeDirectly": "Write directly",
+    "botPending": "Complete the bot check to send.",
+    "errors": {
+      "rate-limited": "Too many messages from this connection. Please wait a minute.",
+      "bot-check": "The bot check didn't pass. Please try again.",
+      "token-expired": "The form session expired. Please resubmit.",
+      "token-invalid": "Couldn't verify the form session. Please reload and retry.",
+      "invalid": "Some fields need attention.",
+      "not-configured": "The mail relay isn't configured yet.",
+      "delivery": "Delivery failed. Please email me directly.",
+      "forbidden": "Request blocked.",
+      "name.short": "Tell me your name.",
+      "name.long": "That name is a bit long.",
+      "email.invalid": "That email doesn't look right.",
+      "company.long": "That's a bit long.",
+      "message.short": "A little more detail, please (20+ characters).",
+      "message.long": "Please keep it under 4,000 characters."
+    }
+  },
+  "footer": {
+    "index": "09 / 09",
+    "roles": "Cybersecurity · DevSecOps · AI research",
+    "based": "Based in {location}, working with teams anywhere.",
+    "host": "Host",
+    "env": "Env",
+    "commit": "Commit",
+    "rendered": "Rendered",
+    "stack": "Stack",
+    "secured": "Secured by",
+    "terminalHint": "Press ` anywhere for the terminal",
+    "rights": "All rights reserved."
+  },
+  "terminal": {
+    "boot": "ador-os v3.0 · secure shell · {location}",
+    "hint": "Type help to list commands. ↑/↓ history, Tab completes.",
+    "cmd": {
+      "help": "list available commands",
+      "about": "who I am, security + AI",
+      "roadmap": "academic & merit roadmap",
+      "certs": "credentials earned and in progress",
+      "security-audit": "live security posture of this site",
+      "labs": "jump to the hands-on labs",
+      "research": "publications & work in progress",
+      "projects": "case studies + live repos",
+      "contact": "ways to reach me",
+      "langs": "switch interface language",
+      "hire": "jump to the contact form",
+      "sound": "toggle interface sound",
+      "clear": "clear the screen",
+      "exit": "close the terminal"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# Extends the default ruleset. Cloudflare's public Turnstile *test* keys are
+# documented in .env.example and are safe to commit (they always pass and are
+# not account credentials), so they're allowlisted to avoid false positives.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public Cloudflare Turnstile test keys and example placeholders"
+regexes = [
+  '''1x00000000000000000000AA''',
+  '''1x0000000000000000000000000000000AA''',
+  '''re_x{8,}''',
+]
