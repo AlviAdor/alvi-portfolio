@@ -25,6 +25,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // jsdom reads its own files at runtime and must not be bundled (see lib/security/sanitize.ts)
+  serverExternalPackages: ["jsdom"],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [{ protocol: "https", hostname: "avatars.githubusercontent.com" }],

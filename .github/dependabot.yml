@@ -30,6 +30,12 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "@types/react-dom"
         update-types: ["version-update:semver-major"]
+      # jsdom 27+ pulls an ESM-only dependency through require(), which crashes on
+      # Vercel's runtime (see lib/security/sanitize.ts). Stay on 26.x until that changes.
+      - dependency-name: "jsdom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/jsdom"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

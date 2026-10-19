@@ -120,7 +120,10 @@ await check("contact: wrong content-type rejected (415)", async () => {
   assert(r.status === 415, `status ${r.status}`);
 });
 await check("contact: markup sanitised, invalid fields rejected (422 or bot-check 403)", async () => {
-  const r = await get("/api/contact", { method: "POST", headers: { "content-type": "application/json", ...sameOrigin }, body: JSON.stringify({ name: "<b>A</b>", email: "bad", message: "short" }) });
+  // behave like a real client: get a signed form token, wait out the 2.5 s human minimum
+  const { token } = await (await get("/api/contact", { headers: sameOrigin })).json();
+  if (token) await new Promise((r) => setTimeout(r, 2700));
+  const r = await get("/api/contact", { method: "POST", headers: { "content-type": "application/json", ...sameOrigin }, body: JSON.stringify({ name: "<b>A</b>", email: "bad", message: "short", formToken: token ?? undefined }) });
   const d = await r.json();
   // with Turnstile on, the bot check runs first and answers 403 before field validation
   assert(r.status === 422 || (r.status === 403 && d.error === "bot-check"), `status ${r.status} ${JSON.stringify(d)}`);

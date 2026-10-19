@@ -34,6 +34,18 @@ jobs:
       - run: npm run build
         env:
           NEXT_TELEMETRY_DISABLED: "1"
+      # Vercel's function loader can't require() ES modules. Node can emulate that
+      # with --no-experimental-require-module, so run the built site that way and
+      # smoke-test it: a dependency that needs require(ESM) fails here, not in production.
+      - name: smoke test (Vercel-like runtime, require(ESM) disabled)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export FORM_TOKEN_SECRET="$(openssl rand -hex 32)"
+          node --no-experimental-require-module node_modules/next/dist/bin/next start -p 3123 > server.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf -o /dev/null http://localhost:3123/ && break; sleep 1; done
+          node scripts/smoke-test.mjs http://localhost:3123 || { echo "--- server log ---"; tail -50 server.log; exit 1; }
+          if grep -q ERR_REQUIRE_ESM server.log; then echo "require(ESM) crash in server log"; grep -m3 ERR_REQUIRE_ESM server.log; exit 1; fi
 
   dependencies:
     name: dependency audit

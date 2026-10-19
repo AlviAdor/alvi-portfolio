@@ -1,0 +1,16 @@
+# Uploaded by `vercel deploy` from this machine: keep it to what the build needs.
+# Secrets never leave the Mac (Vercel reads them from Project → Environment Variables).
+.env
+.env.*
+!.env.example
+# local tooling and build output
+node_modules
+.next
+.git
+.vercel
+.media-work
+.media-tools
+*.tsbuildinfo
+.DS_Store
+# rendered walkthrough videos (~100 MB) are publishing assets, not site assets
+media/walkthrough/*.mp4

@@ -117,6 +117,7 @@ All API routes are rate-limited and send `X-RateLimit-*` / `Retry-After` headers
 ## Known, accepted items
 
 - `npm audit` (including dev dependencies) reports `braces` ≤ 3.0.3 via ESLint's glob tooling. No patched release exists yet; it is dev-only and never shipped. The CI gate audits production dependencies only, and Dependabot will raise the fix when it lands.
+- `jsdom` is pinned to 26.x (DOMPurify's parser). jsdom 27+ requires an ESM-only package through `require()`, which crashes on Vercel's runtime; CI smoke-tests the build with require(ESM) disabled to catch any regression like this.
 - MediaPipe tries to send usage telemetry to Google; the CSP blocks it, so you may see one console message. Nothing about the camera or photo leaves the device.
 
 ## Check before you share the link

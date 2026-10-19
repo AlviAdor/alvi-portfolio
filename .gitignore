@@ -14,3 +14,5 @@ next-env.d.ts
 media/walkthrough/*.mp4
 .media-work/
 .media-tools/
+.env*
+!.env.example
