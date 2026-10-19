@@ -234,3 +234,4 @@ Never include keys or tokens in the report.
 | Vercel domain stuck on "Invalid configuration" | is-a.dev PR not merged yet, or wrong record | Wait for the merge; re-check 5.2 vs the JSON you submitted |
 | Console shows a blocked request to `odml.pa.googleapis.com` | MediaPipe telemetry, blocked by the CSP on purpose | Nothing; this is expected |
 | CI "dependency audit" informational step fails | Dev-only `braces` advisory (no patched release yet) | Expected; the production gate above it must still pass |
+| CI `npm ci` fails: "Missing: <pkg> from lock file" | The lockfile was written by a different npm major than CI's npm 10 (this Mac has npm 12) | Never hand-edit `package-lock.json`. Run `npm install`, then `npm run check:lock` (replays CI's npm 10 `ci` check locally); commit both `package.json` and `package-lock.json` only when it passes |
