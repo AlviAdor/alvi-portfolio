@@ -18,26 +18,26 @@
     "check:lock": "npx -y npm@10.9 ci --dry-run --ignore-scripts --no-audit --no-fund"
   },
   "dependencies": {
-    "@mediapipe/tasks-vision": "1.1.1",
+    "@mediapipe/tasks-vision": "1.2.0",
     "@react-three/drei": "10.7.9",
     "@react-three/fiber": "9.8.2",
     "@swc/helpers": "0.5.23",
     "@upstash/ratelimit": "2.2.0",
-    "@upstash/redis": "1.39.0",
+    "@upstash/redis": "1.40.0",
     "dompurify": "3.4.17",
-    "framer-motion": "14.3.0",
+    "framer-motion": "14.8.0",
     "gsap": "3.15.0",
     "jsdom": "26.1.0",
     "lenis": "1.3.27",
-    "lucide-react": "1.59.0",
+    "lucide-react": "1.64.0",
     "next": "15.5.28",
     "next-intl": "4.14.9",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "resend": "6.34.1",
+    "resend": "6.35.0",
     "three": "0.186.1",
     "zod": "4.6.7",
-    "zustand": "5.0.15"
+    "zustand": "5.0.16"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.7",
