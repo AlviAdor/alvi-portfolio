@@ -9,7 +9,7 @@ working files go to git-ignored `.media-work/` and `.media-tools/`.
 ```bash
 mkdir -p .media-tools/{voices,bin,fonts}
 python3 -m venv .media-tools/venv && .media-tools/venv/bin/pip install -q piper-tts fonttools
-# neural narration voice (MIT-licensed Piper voice "Ryan")
+# narration voice (MIT-licensed Piper voice "Ryan")
 for f in en_US-ryan-high.onnx en_US-ryan-high.onnx.json; do
   curl -sL -o .media-tools/voices/$f "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/high/$f"; done
 # static ffmpeg 6.0 with libx264 + libass (no system install)

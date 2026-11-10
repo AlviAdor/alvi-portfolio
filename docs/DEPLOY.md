@@ -1,31 +1,31 @@
-# Deploy runbook for Jarvis
+# Deploy runbook
 
 **Goal:** take `~/alvi-portfolio` from this Mac to a live, hardened site at
 **https://alviador.is-a.dev** for $0/month, then prove it has no bugs.
 
-**Who runs this:** Jarvis, operating the Mac (shell, browser, screen) on behalf of
-Alvi. Follow the phases in order. Each step says what to do, how to check it
-worked, and what to do if it didn't.
+**How to use it:** follow the phases in order. Each step says what to do, how to
+check it worked, and what to do if it didn't.
 
 ---
 
-## Rules for Jarvis (read first)
+## Ground rules (read first)
 
-1. **Stop and ask Alvi before** any of these. Say exactly what you are about to
-   do and wait for a "yes":
+1. **Owner sign-off.** Steps marked **Owner sign-off** change something outside
+   this machine. Each one needs the account owner's explicit "yes" first, given
+   knowing exactly what is about to happen:
    - signing up for, or logging in to, any account (GitHub, Vercel, Resend, Cloudflare, Upstash)
-   - typing a password or a 2FA code (Alvi types these himself)
+   - entering a password or a 2FA code (the owner enters these personally)
    - making a repository public, opening a pull request, or deploying to production
    - changing DNS or a domain setting
-2. **Never show, speak, log or commit a secret.** API keys, tokens and
+2. **Never display, log or commit a secret.** API keys, tokens and
    `FORM_TOKEN_SECRET` go straight from the provider's page into the Vercel
-   environment-variable form. Do not read them aloud, do not paste them into
-   chat, and never put them in a file inside the repo.
+   environment-variable form. Do not paste them into chat or notes, and never
+   put them in a file inside the repo.
 3. **Never commit `.env.local`.** Before every commit, run
    `git status --short` and confirm no `.env` file is listed.
-4. **If a check fails, stop the phase,** report the exact command and output to
-   Alvi, and use the troubleshooting table at the end. Do not improvise fixes
-   to code.
+4. **If a check fails, stop the phase.** Take the exact command and its output
+   to the owner, and work through the troubleshooting table at the end before
+   changing any code.
 5. All commands run from `~/alvi-portfolio` unless stated otherwise.
 
 ---
@@ -42,7 +42,7 @@ worked, and what to do if it didn't.
 | 1.6 | `node scripts/smoke-test.mjs http://localhost:3000` | last line `N/N passed`; exit code 0 |
 | 1.7 | Stop the server (Ctrl-C in its tab) | |
 
-If 1.3 or 1.6 fails: stop, report the failing line to Alvi.
+If 1.3 or 1.6 fails: stop and note the failing line (ground rule 4).
 
 ---
 
@@ -50,22 +50,22 @@ If 1.3 or 1.6 fails: stop, report the failing line to Alvi.
 
 | # | Do | Expected |
 |---|---|---|
-| 2.1 | `gh auth status` | "Logged in to github.com as AlviAdor". If not: **ask Alvi**, then run `gh auth login` and let him complete it |
+| 2.1 | `gh auth status` | "Logged in to github.com as AlviAdor". If not: **Owner sign-off**, then run `gh auth login`; the owner completes the login |
 | 2.2 | `git init -b main` (skip if `.git` already exists) | |
 | 2.3 | `git add -A && git status --short` | **No line containing `.env`**. `.env.example` is fine; `.env.local` must not appear. If it does, stop |
 | 2.4 | `git commit -m "Initial portfolio: hardened, multilingual, 3D"` | commit created |
-| 2.5 | **Ask Alvi:** "Create a public GitHub repo AlviAdor/alvi-portfolio and push?" | wait for yes |
+| 2.5 | **Owner sign-off:** create the public GitHub repo `AlviAdor/alvi-portfolio` and push | an explicit yes |
 | 2.6 | `gh repo create AlviAdor/alvi-portfolio --public --source . --push` | prints the repo URL |
 | 2.7 | Open `https://github.com/AlviAdor/alvi-portfolio/actions` in the browser and wait for the **ci** workflow | all four jobs green: verify, dependency audit, secret scan, CodeQL |
 
-If the **secret scan** job fails, something secret was committed. Stop and tell
-Alvi immediately; the key must be rotated at its provider, not just deleted.
+If the **secret scan** job fails, something secret was committed. Stop and alert
+the owner immediately; the key must be rotated at its provider, not just deleted.
 
 ---
 
 ## Phase 3: Create the free accounts and collect the keys
 
-Do these in the browser. For each one, **ask Alvi before signing up**. Keep the
+Do these in the browser. Each sign-up needs **Owner sign-off**. Keep the
 values in the provider's tab until Phase 4 asks for them; never copy them
 anywhere else.
 
@@ -73,7 +73,7 @@ anywhere else.
 1. https://resend.com → sign up **with the inbox that should receive messages**.
 2. API Keys → Create API Key → permission **Sending access**.
 3. Note for Phase 4: `RESEND_API_KEY` (starts with `re_`), and that
-   `CONTACT_TO_EMAIL` = the email Alvi signed up with.
+   `CONTACT_TO_EMAIL` = the email used to sign up.
 
 ### 3.2 Cloudflare Turnstile (bot check)
 1. https://dash.cloudflare.com → sign up / log in → **Turnstile** → Add widget.
@@ -98,15 +98,15 @@ Generate it only when the Vercel form in Phase 4 is open, and paste it straight 
 
 | # | Do | Expected |
 |---|---|---|
-| 4.1 | **Ask Alvi**, then sign in at https://vercel.com with GitHub | Vercel dashboard |
+| 4.1 | **Owner sign-off**, then sign in at https://vercel.com with GitHub | Vercel dashboard |
 | 4.2 | Add New → Project → Import `AlviAdor/alvi-portfolio` | framework detected: **Next.js**; leave build settings as default |
 | 4.3 | Before clicking Deploy, open **Environment Variables** and add each row below (Production and Preview) | |
-| 4.4 | **Ask Alvi**, then click **Deploy** | build log ends "Ready"; a URL like `alvi-portfolio-xxxx.vercel.app` |
+| 4.4 | **Owner sign-off**, then click **Deploy** | build log ends "Ready"; a URL like `alvi-portfolio-xxxx.vercel.app` |
 
 | Name | Value |
 |---|---|
 | `RESEND_API_KEY` | from 3.1 |
-| `CONTACT_TO_EMAIL` | Alvi's Resend sign-up email |
+| `CONTACT_TO_EMAIL` | the Resend sign-up email |
 | `CONTACT_FROM_EMAIL` | `Portfolio Contact <onboarding@resend.dev>` |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Site Key from 3.2 |
 | `TURNSTILE_SECRET_KEY` | Secret Key from 3.2 |
@@ -136,12 +136,12 @@ first-come.
 
 | # | Do | Expected |
 |---|---|---|
-| 5.1 | `curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/is-a-dev/register/main/domains/alviador.json` | `404` = still free. Anything else: stop and ask Alvi for another name |
+| 5.1 | `curl -s -o /dev/null -w "%{http_code}" https://raw.githubusercontent.com/is-a-dev/register/main/domains/alviador.json` | `404` = still free. Anything else: stop; the owner picks another name |
 | 5.2 | Vercel → Project → Settings → **Domains** → Add `alviador.is-a.dev`. If offered a `www` redirect, turn it off | Vercel shows "Invalid configuration" plus the **record it wants** (currently an **A record `216.198.79.1`**, or a CNAME) and a **TXT verification value** for `_vercel` |
 | 5.3 | `gh repo fork is-a-dev/register --clone=false` | fork created under AlviAdor |
 | 5.4 | In the fork (browser: Add file → Create new file), create `domains/alviador.json` with the content below, using the record Vercel showed | committed to a new branch |
 | 5.5 | Create `domains/_vercel.alviador.json` (content below) with Vercel's TXT value | committed to the same branch |
-| 5.6 | **Ask Alvi**, then open a pull request to `is-a-dev/register`. Fill in the template: describe the site and link the live `*.vercel.app` URL (reviewers check that the site is real and finished) | PR open; it may take hours to a few days |
+| 5.6 | **Owner sign-off**, then open a pull request to `is-a-dev/register`. Fill in the template: describe the site and link the live `*.vercel.app` URL (reviewers check that the site is real and finished) | PR open; it may take hours to a few days |
 | 5.7 | When the PR is merged: `dig +short alviador.is-a.dev` | the record from 5.2 |
 | 5.8 | Back in Vercel → Domains | `alviador.is-a.dev` shows **Valid Configuration**; HTTPS certificate issued automatically |
 
@@ -198,7 +198,7 @@ Open https://alviador.is-a.dev and confirm each item. Note any that fail.
 - [ ] Labs → This site's headers → Run audit: grade **A+**, every header "present".
 - [ ] Language switcher (globe icon): each of EN · ES · FR · DE · 日本語 · বাংলা changes the interface, and the URL gains `/es`, `/fr`, …
 - [ ] Terminal (`` ` `` key): `help`, `security-audit`, `certs`, `langs bn` all respond.
-- [ ] Contact: **ask Alvi**, then send one real test message. The bot check passes, the form shows "Received", and the email arrives in Alvi's inbox within a minute.
+- [ ] Contact: **Owner sign-off**, then send one real test message. The bot check passes, the form shows "Received", and the email arrives in the `CONTACT_TO_EMAIL` inbox within a minute.
 - [ ] Phone width: nothing scrolls sideways; the hero falls back cleanly if the phone is low-power.
 
 ### 6.3 Repository health
@@ -208,13 +208,13 @@ Open https://alviador.is-a.dev and confirm each item. Note any that fail.
 
 ---
 
-## Phase 7: Report back to Alvi
+## Phase 7: Hand-off report
 
-Tell Alvi, briefly:
+Give the owner a brief summary:
 
 1. The live URL, and whether `alviador.is-a.dev` is active or the PR is still waiting.
 2. The smoke-test result line (e.g. `27/27 passed`).
-3. Any unchecked item from 6.2, with what you saw.
+3. Any unchecked item from 6.2, with what was observed.
 4. Anything skipped and why.
 
 Never include keys or tokens in the report.

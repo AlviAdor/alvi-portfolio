@@ -161,7 +161,7 @@ if (!isLocal) {
   await check("production: all protections switched on", async () => {
     const off = ["turnstile", "formTokens", "relay"].filter((k) => status && status[k] !== true);
     if (status?.rateLimit !== "upstash") off.push("rateLimit=upstash");
-    assert(off.length === 0, `not configured: ${off.join(", ")} (see docs/JARVIS_DEPLOY.md, phase 3)`);
+    assert(off.length === 0, `not configured: ${off.join(", ")} (see docs/DEPLOY.md, phase 3)`);
   });
 }
 

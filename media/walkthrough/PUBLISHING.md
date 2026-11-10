@@ -5,7 +5,7 @@
 | File | Use it for |
 |---|---|
 | `alvi-ador-walkthrough.mp4` | LinkedIn, X, Instagram, anywhere video autoplays muted. Captions are burned in. |
-| `alvi-ador-walkthrough-clean.mp4` | YouTube, your portfolio, a recruiter email. No burned captions; includes a toggleable English subtitle track. |
+| `alvi-ador-walkthrough-clean.mp4` | YouTube, the portfolio site, a recruiter email. No burned captions; includes a toggleable English subtitle track. |
 | `alvi-ador-walkthrough.en.srt` | Upload as the caption file on YouTube / LinkedIn (better than auto-captions). |
 | `alvi-ador-walkthrough.en.vtt` | Captions for an HTML `<video>` element. |
 | `thumbnail.jpg` | 1280×720 cover / custom thumbnail. |
@@ -93,6 +93,6 @@ For Reels / Shorts / TikTok, cut vertical clips from these self-contained beats 
 
 ## Notes
 
-- **Voice:** synthetic narration (Piper neural TTS, "Ryan" voice) generated on this Mac. If you'd rather it be your own voice, record the 15 lines in `scripts/media/script.json` as WAVs named by `id` into `.media-work/vo/`, update `durations.json`, and re-run `record.mjs` + `assemble.py`; every scene re-times itself to your delivery.
-- **What's shown:** the walkthrough was recorded on a local build, so the live panel honestly reads "Rate limit: in-memory" and "Mail relay: off". Once the site is deployed with Upstash and Resend (see `docs/JARVIS_DEPLOY.md`), re-render with [`scripts/media/REPRODUCE.md`](../../scripts/media/REPRODUCE.md) if you want those rows to show the production values.
+- **Voice:** the narration is rendered with Piper text-to-speech ("Ryan" voice). To use a recorded voice instead, record the 15 lines in `scripts/media/script.json` as WAVs named by `id` into `.media-work/vo/`, update `durations.json`, and re-run `record.mjs` + `assemble.py`; every scene re-times itself to the delivery.
+- **What's shown:** the walkthrough was recorded on a local build, so the live panel honestly reads "Rate limit: in-memory" and "Mail relay: off". Once the site is deployed with Upstash and Resend (see `docs/DEPLOY.md`), re-render with [`scripts/media/REPRODUCE.md`](../../scripts/media/REPRODUCE.md) if you want those rows to show the production values.
 - **Personal data:** the contact form shows placeholder details ("Ada Lovelace"); no real message is sent in the video.

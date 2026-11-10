@@ -4,13 +4,13 @@ Personal site for **Md. Faizal Alvi Sarker (Alvi Ador)**: cybersecurity & DevSec
 
 Next.js 15 (App Router, Server Components, Server Actions) · React 19 · next-intl (6 languages) · three.js / React Three Fiber / custom GLSL · GSAP + Lenis · Zustand · Tailwind CSS v4 · Resend · Upstash · Cloudflare Turnstile · MediaPipe (in-browser).
 
-> **Deploying?** Follow [`docs/JARVIS_DEPLOY.md`](docs/JARVIS_DEPLOY.md): a step-by-step runbook (written so an assistant like Jarvis can execute it) covering accounts, secrets, Vercel, the free `alviador.is-a.dev` domain, and a post-deploy bug check.
+> **Deploying?** Follow [`docs/DEPLOY.md`](docs/DEPLOY.md): a step-by-step runbook covering accounts, secrets, Vercel, the free `alviador.is-a.dev` domain, and a post-deploy bug check.
 
 ![Hero](docs/screenshots/01-hero.jpg)
 
 ## Walkthrough
 
-A 2:12 narrated tour with subtitles lives in [`media/walkthrough/`](media/walkthrough/): a social cut with captions burned in, a clean cut with a toggleable subtitle track, `.srt`/`.vtt` captions, a thumbnail, and a [publishing kit](media/walkthrough/PUBLISHING.md) (titles, description, chapters, LinkedIn post). The `.mp4` files are git-ignored because of their size; upload them to YouTube/LinkedIn and link them here. To re-render after changes, follow [`scripts/media/REPRODUCE.md`](scripts/media/REPRODUCE.md).
+A 2:12 narrated tour with subtitles lives in [`media/walkthrough/`](media/walkthrough/): a social cut with captions burned in, a clean cut with a toggleable subtitle track, `.srt`/`.vtt` captions, a thumbnail, and a [publishing kit](media/walkthrough/PUBLISHING.md) (titles, description, chapters, LinkedIn post). The `.mp4` files are git-ignored because of their size; they are meant for YouTube/LinkedIn rather than the repo. To re-render after changes, follow [`scripts/media/REPRODUCE.md`](scripts/media/REPRODUCE.md).
 
 ## Screenshots
 
@@ -72,7 +72,7 @@ Press <kbd>`</kbd> anywhere for the terminal (`help`, `roadmap`, `certs`, `secur
 
 English, Español, Français, Deutsch, 日本語 and বাংলা, via `next-intl` with locale-prefixed routes (`/`, `/fr`, `/bn/projects/…`). Japanese and Bengali glyphs come from self-hosted Noto fallbacks.
 
-**Scope, stated plainly:** the interface, hero, roadmap, labs, credentials, contact, footer and terminal are fully translated (260 strings × 6). The long-form narrative (About story, research summaries, case-study write-ups, security pillar text) stays in English, and non-English visitors see a one-time notice saying so. Translations are machine-assisted; have a native speaker review them before relying on them, especially Japanese and Bengali.
+**Scope, stated plainly:** the interface, hero, roadmap, labs, credentials, contact, footer and terminal are fully translated (260 strings × 6). The long-form narrative (About story, research summaries, case-study write-ups, security pillar text) stays in English, and non-English visitors see a one-time notice saying so. The translations have not had a native-speaker review yet; treat them as provisional, especially Japanese and Bengali.
 
 Edit strings in `messages/<locale>.json`; `npm run check:i18n` catches missing keys and broken placeholders.
 
@@ -119,10 +119,3 @@ All API routes are rate-limited and send `X-RateLimit-*` / `Retry-After` headers
 - `npm audit` (including dev dependencies) reports `braces` ≤ 3.0.3 via ESLint's glob tooling. No patched release exists yet; it is dev-only and never shipped. The CI gate audits production dependencies only, and Dependabot will raise the fix when it lands.
 - `jsdom` is pinned to 26.x (DOMPurify's parser). jsdom 27+ requires an ESM-only package through `require()`, which crashes on Vercel's runtime; CI smoke-tests the build with require(ESM) disabled to catch any regression like this.
 - MediaPipe tries to send usage telemetry to Google; the CSP blocks it, so you may see one console message. Nothing about the camera or photo leaves the device.
-
-## Check before you share the link
-
-- The FER paper summary in `lib/site.ts` is inferred from its title; replace it with the real abstract wording, and add co-authors to the in-progress entries.
-- About shows "4 research lines in progress" (from your old About page) while Research lists two; add the others or change `site.researchInProgress`.
-- The ResearchGate link is a search page; paste your exact profile URL into `site.researchgate`.
-- If you earn Security+, CEH or a TryHackMe certificate, move it to `status: "earned"` in `lib/credentials.ts` with its verification link.
