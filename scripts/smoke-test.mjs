@@ -185,6 +185,14 @@ if (!isLocal) {
     assert(base.startsWith("https://"), "not https");
     assert(/preload/.test((await get("/")).headers.get("strict-transport-security") ?? ""), "no HSTS preload");
   });
+  await check("production: social card image resolves", async () => {
+    const html = await (await get("/")).text();
+    const image = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
+    assert(image, "no og:image in the page");
+    const r = await fetch(image, { redirect: "manual" });
+    assert(r.status === 200 && (r.headers.get("content-type") ?? "").startsWith("image/"), `${image} → ${r.status} ${r.headers.get("content-type") ?? ""} (is NEXT_PUBLIC_SITE_URL a domain that serves this site?)`);
+    return new URL(image).host;
+  });
   await check("production: all protections switched on", async () => {
     const off = ["turnstile", "formTokens", "relay"].filter((k) => status && status[k] !== true);
     if (status?.rateLimit !== "upstash") off.push("rateLimit=upstash");

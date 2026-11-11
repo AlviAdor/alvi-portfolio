@@ -14,7 +14,12 @@ export const site = {
   education: "B.Sc. CSE, American International University–Bangladesh (Cybersecurity major, ML minor)",
   availability: "Open to ML / AI internships & research collaborations",
   email: "sarker.faizal2537@gmail.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://alviador.is-a.dev",
+  /**
+   * Canonical origin: metadata, social cards, JSON-LD and security.txt are built from it, so it
+   * must be an address that really serves this site. The default is the production deployment;
+   * set NEXT_PUBLIC_SITE_URL once a custom domain is live (docs/DEPLOY.md, phase 5).
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://alvi-portfolio-theta.vercel.app",
   github: { user: "AlviAdor", url: "https://github.com/AlviAdor" },
   linkedin: "https://www.linkedin.com/in/alviador",
   researchgate: "https://www.researchgate.net/search/researcher?q=Md.%20Faizal%20Alvi%20Sarker",
