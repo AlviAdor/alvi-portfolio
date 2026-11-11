@@ -315,12 +315,20 @@
       "not-configured": "El relé de correo aún no está configurado.",
       "delivery": "La entrega falló. Escríbeme directamente, por favor.",
       "forbidden": "Petición bloqueada.",
-      "name.short": "Dime tu nombre.",
-      "name.long": "Ese nombre es un poco largo.",
-      "email.invalid": "Ese correo no parece correcto.",
-      "company.long": "Es un poco largo.",
-      "message.short": "Un poco más de detalle, por favor (20+ caracteres).",
-      "message.long": "Mantenlo por debajo de 4.000 caracteres, por favor."
+      "name": {
+        "short": "Dime tu nombre.",
+        "long": "Ese nombre es un poco largo."
+      },
+      "email": {
+        "invalid": "Ese correo no parece correcto."
+      },
+      "company": {
+        "long": "Es un poco largo."
+      },
+      "message": {
+        "short": "Un poco más de detalle, por favor (20+ caracteres).",
+        "long": "Mantenlo por debajo de 4.000 caracteres, por favor."
+      }
     }
   },
   "footer": {

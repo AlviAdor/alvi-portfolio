@@ -315,12 +315,20 @@
       "not-configured": "Das Mail-Relay ist noch nicht konfiguriert.",
       "delivery": "Zustellung fehlgeschlagen. Bitte schreib mir direkt.",
       "forbidden": "Anfrage blockiert.",
-      "name.short": "Nenn mir deinen Namen.",
-      "name.long": "Dieser Name ist etwas lang.",
-      "email.invalid": "Diese E-Mail sieht nicht richtig aus.",
-      "company.long": "Das ist etwas lang.",
-      "message.short": "Etwas mehr Detail, bitte (20+ Zeichen).",
-      "message.long": "Bitte unter 4.000 Zeichen halten."
+      "name": {
+        "short": "Nenn mir deinen Namen.",
+        "long": "Dieser Name ist etwas lang."
+      },
+      "email": {
+        "invalid": "Diese E-Mail sieht nicht richtig aus."
+      },
+      "company": {
+        "long": "Das ist etwas lang."
+      },
+      "message": {
+        "short": "Etwas mehr Detail, bitte (20+ Zeichen).",
+        "long": "Bitte unter 4.000 Zeichen halten."
+      }
     }
   },
   "footer": {

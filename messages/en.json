@@ -315,12 +315,20 @@
       "not-configured": "The mail relay isn't configured yet.",
       "delivery": "Delivery failed. Please email me directly.",
       "forbidden": "Request blocked.",
-      "name.short": "Tell me your name.",
-      "name.long": "That name is a bit long.",
-      "email.invalid": "That email doesn't look right.",
-      "company.long": "That's a bit long.",
-      "message.short": "A little more detail, please (20+ characters).",
-      "message.long": "Please keep it under 4,000 characters."
+      "name": {
+        "short": "Tell me your name.",
+        "long": "That name is a bit long."
+      },
+      "email": {
+        "invalid": "That email doesn't look right."
+      },
+      "company": {
+        "long": "That's a bit long."
+      },
+      "message": {
+        "short": "A little more detail, please (20+ characters).",
+        "long": "Please keep it under 4,000 characters."
+      }
     }
   },
   "footer": {

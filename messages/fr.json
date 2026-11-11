@@ -315,12 +315,20 @@
       "not-configured": "Le relais mail n'est pas encore configuré.",
       "delivery": "Échec de l'envoi. Écrivez-moi directement.",
       "forbidden": "Requête bloquée.",
-      "name.short": "Dites-moi votre nom.",
-      "name.long": "Ce nom est un peu long.",
-      "email.invalid": "Cet e-mail semble incorrect.",
-      "company.long": "C'est un peu long.",
-      "message.short": "Un peu plus de détails, svp (20+ caractères).",
-      "message.long": "Restez sous 4 000 caractères, svp."
+      "name": {
+        "short": "Dites-moi votre nom.",
+        "long": "Ce nom est un peu long."
+      },
+      "email": {
+        "invalid": "Cet e-mail semble incorrect."
+      },
+      "company": {
+        "long": "C'est un peu long."
+      },
+      "message": {
+        "short": "Un peu plus de détails, svp (20+ caractères).",
+        "long": "Restez sous 4 000 caractères, svp."
+      }
     }
   },
   "footer": {
