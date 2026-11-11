@@ -17,6 +17,7 @@ import Intro from "@/components/ui/Intro";
 import Nav from "@/components/ui/Nav";
 import TerminalModal from "@/components/ui/Terminal";
 import { routing } from "@/i18n/routing";
+import { deployment } from "@/lib/deployment";
 import { getGitHubData } from "@/lib/github";
 import { getResearchData } from "@/lib/research";
 import { site } from "@/lib/site";
@@ -64,7 +65,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <Skills />
         <Contact />
       </main>
-      <Footer builtAt={github.fetchedAt} />
+      <Footer builtAt={github.fetchedAt} deploy={deployment()} />
       <TerminalModal data={terminalData} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
     </SmoothScroll>

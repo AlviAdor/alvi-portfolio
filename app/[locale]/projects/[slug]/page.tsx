@@ -11,6 +11,7 @@ import TerminalModal from "@/components/ui/Terminal";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { ago, LANG_COLOR } from "@/lib/format";
+import { deployment } from "@/lib/deployment";
 import { getGitHubData } from "@/lib/github";
 import { categoryLabel, projectBySlug, projects } from "@/lib/projects";
 import { getResearchData } from "@/lib/research";
@@ -164,7 +165,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </Link>
         </div>
       </main>
-      <Footer builtAt={github.fetchedAt} />
+      <Footer builtAt={github.fetchedAt} deploy={deployment()} />
       <TerminalModal data={{ papers: research.papers, repos: github.repos }} />
     </SmoothScroll>
   );

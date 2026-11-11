@@ -4,21 +4,11 @@ import { ShieldCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 import DhakaClock from "@/components/ui/DhakaClock";
 import SoundToggle from "@/components/ui/SoundToggle";
+import type { Deployment } from "@/lib/deployment";
 import { site } from "@/lib/site";
 
-function deployment() {
-  if (process.env.NEXT_PUBLIC_VERCEL_ENV || process.env.VERCEL) {
-    return { host: "Vercel Edge Network", sha: process.env.VERCEL_GIT_COMMIT_SHA, env: process.env.VERCEL_ENV ?? "production" };
-  }
-  if (process.env.CF_PAGES || process.env.WORKERS_CI) {
-    return { host: "Cloudflare", sha: process.env.CF_PAGES_COMMIT_SHA ?? process.env.WORKERS_CI_COMMIT_SHA, env: process.env.CF_PAGES_BRANCH ?? "production" };
-  }
-  return { host: "Self-hosted Node", sha: undefined, env: process.env.NODE_ENV };
-}
-
-export default function Footer({ builtAt }: { builtAt: string }) {
+export default function Footer({ builtAt, deploy }: { builtAt: string; deploy: Deployment }) {
   const t = useTranslations("footer");
-  const d = deployment();
   const year = new Date(builtAt).getUTCFullYear();
 
   return (
@@ -38,11 +28,11 @@ export default function Footer({ builtAt }: { builtAt: string }) {
 
         <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 font-mono text-[11px]">
           <dt className="text-faint uppercase">{t("host")}</dt>
-          <dd className="text-ink/80">{d.host}</dd>
+          <dd className="text-ink/80">{deploy.host}</dd>
           <dt className="text-faint uppercase">{t("env")}</dt>
-          <dd className="text-ink/80">{d.env}</dd>
+          <dd className="text-ink/80">{deploy.env}</dd>
           <dt className="text-faint uppercase">{t("commit")}</dt>
-          <dd className="text-ink/80">{d.sha ? d.sha.slice(0, 7) : "local"}</dd>
+          <dd className="text-ink/80">{deploy.commit ?? "local"}</dd>
           <dt className="text-faint uppercase">{t("rendered")}</dt>
           <dd className="text-ink/80">
             <time dateTime={builtAt}>{builtAt.slice(0, 16).replace("T", " ")} UTC</time>
