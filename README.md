@@ -119,6 +119,6 @@ All API routes are rate-limited and send `X-RateLimit-*` / `Retry-After` headers
 
 ## Known, accepted items
 
-- `npm audit` (including dev dependencies) reports `braces` ≤ 3.0.3 via ESLint's glob tooling. No patched release exists yet; it is dev-only and never shipped. The CI gate audits production dependencies only, and Dependabot will raise the fix when it lands.
+- `npm audit` (including dev dependencies) reports a moderate advisory in `minimatch` 10.x, pulled in by typescript-eslint, the linter's parser. Every current typescript-eslint release depends on the affected range and the fix is a new major of `minimatch`, so there is nothing to upgrade to yet (`npm audit fix` would downgrade the parser two majors instead). It is dev-only and never shipped. The CI gate audits production dependencies, which are clean, and Dependabot security updates will raise the fix when it lands.
 - `jsdom` is pinned to 26.x (DOMPurify's parser). jsdom 27+ requires an ESM-only package through `require()`, which crashes on Vercel's runtime; CI smoke-tests the build with require(ESM) disabled to catch any regression like this.
 - MediaPipe tries to send usage telemetry to Google; the CSP blocks it, so you may see one console message. Nothing about the camera or photo leaves the device.
