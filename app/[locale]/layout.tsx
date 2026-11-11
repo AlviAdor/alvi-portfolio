@@ -76,7 +76,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={localeTags[locale]} dir="ltr" className={`${grotesk.variable} ${mono.variable} ${notoJp.variable} ${notoBn.variable}`} suppressHydrationWarning>
       <head>
-        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: PREPAINT }} />
+        {/* browsers blank the nonce attribute once it is applied, so the hydrated markup never "matches" */}
+        <script nonce={nonce} suppressHydrationWarning dangerouslySetInnerHTML={{ __html: PREPAINT }} />
       </head>
       <body>
         <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-neon focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-obsidian">
