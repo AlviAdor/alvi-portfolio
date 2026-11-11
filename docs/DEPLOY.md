@@ -113,7 +113,7 @@ Generate it only when the Vercel form in Phase 4 is open, and paste it straight 
 | `UPSTASH_REDIS_REST_URL` | from 3.3 |
 | `UPSTASH_REDIS_REST_TOKEN` | from 3.3 |
 | `FORM_TOKEN_SECRET` | from 3.4 |
-| `NEXT_PUBLIC_SITE_URL` | leave unset until Phase 5 is finished (the default is the production `*.vercel.app` address); then `https://alviador.is-a.dev` |
+| `NEXT_PUBLIC_SITE_URL` | leave unset: the site reads the project's production domain from Vercel, so it follows the `*.vercel.app` address now and `alviador.is-a.dev` once Phase 5 has added it |
 | `GITHUB_TOKEN` | optional; a fine-grained token, "Public repositories (read-only)" |
 
 Then:

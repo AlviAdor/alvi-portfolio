@@ -300,7 +300,7 @@ function useRunner(data: TerminalData, i18n: RunnerI18n, onExit?: () => void) {
           break;
         }
         case "whoami":
-          say(`guest@${new URL(site.url).host}: visitor session, read-only. Recruiter mode unlocks with \`hire\`.`);
+          say(`guest@${window.location.host}: visitor session, read-only. Recruiter mode unlocks with \`hire\`.`);
           break;
         case "sudo":
           say("nice try. permission denied: this incident will be reported to /dev/null", "err");

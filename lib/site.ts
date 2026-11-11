@@ -4,6 +4,12 @@ import type { Paper } from "./types";
  * Single source of truth for everything personal on the site. Edit here;
  * sections, the terminal, metadata and the API fallbacks all read from it.
  */
+/** Vercel sets this on every build and request to the project's production domain (no scheme). Server only. */
+function productionOrigin(): string | undefined {
+  const domain = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  return domain ? `https://${domain}` : undefined;
+}
+
 export const site = {
   name: "Md. Faizal Alvi Sarker",
   handle: "Alvi Ador",
@@ -16,10 +22,11 @@ export const site = {
   email: "sarker.faizal2537@gmail.com",
   /**
    * Canonical origin: metadata, social cards, JSON-LD and security.txt are built from it, so it
-   * must be an address that really serves this site. The default is the production deployment;
-   * set NEXT_PUBLIC_SITE_URL once a custom domain is live (docs/DEPLOY.md, phase 5).
+   * must be an address that really serves this site. In order: an explicit NEXT_PUBLIC_SITE_URL,
+   * then the project's production domain as Vercel reports it (which follows a renamed or
+   * custom domain by itself), then the known production address.
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://alvi-portfolio-theta.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || productionOrigin() || "https://alviador.vercel.app",
   github: { user: "AlviAdor", url: "https://github.com/AlviAdor" },
   linkedin: "https://www.linkedin.com/in/alviador",
   researchgate: "https://www.researchgate.net/search/researcher?q=Md.%20Faizal%20Alvi%20Sarker",
