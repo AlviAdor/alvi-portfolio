@@ -45,6 +45,27 @@
     "modeDefenseDesc": "Bedrohungsabwehr-Matrix",
     "hint": "bewegen · klicken · scrollen"
   },
+  "reel": {
+    "label": "Die Belege im Schnelldurchlauf",
+    "play": "Abspielen",
+    "pause": "Pausieren",
+    "replay": "Wiederholen",
+    "shot": "Szene {n} von {total}: {title}",
+    "openCase": "Fallstudie öffnen: {title}",
+    "cta": "Projekte ansehen",
+    "hookA": "Behaupten ist leicht.",
+    "hookB": "Hier sind die Belege.",
+    "claims": {
+      "scan": "offene Ports, gefunden auf einem Host, über den ich nichts wusste",
+      "train": "Validierungsgenauigkeit, von Grund auf trainiert",
+      "measure": "Fehler bei 1.500 Validierungsbildern",
+      "encrypt": "im Browser verschlüsselt, bevor es gesendet wird",
+      "game": "Spielmodi in einem Build",
+      "languages": "Sprachen, eine Website"
+    },
+    "endA": "Gebaut, um geprüft zu werden.",
+    "endB": "Nicht nur behauptet."
+  },
   "status": {
     "title": "Sicherheitslage live",
     "live": "live",

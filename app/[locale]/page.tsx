@@ -7,6 +7,7 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import Labs from "@/components/sections/Labs";
+import Reel from "@/components/sections/Reel";
 import Research from "@/components/sections/Research";
 import Roadmap from "@/components/sections/Roadmap";
 import Security from "@/components/sections/Security";
@@ -52,6 +53,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <LanguageNotice />
       <main>
         <Hero />
+        <Reel />
         <About data={terminalData} />
         <Roadmap />
         <Labs />

@@ -45,6 +45,27 @@
     "modeDefenseDesc": "Matrice de défense contre les menaces",
     "hint": "bouger · cliquer · défiler"
   },
+  "reel": {
+    "label": "Les preuves, en accéléré",
+    "play": "Lecture",
+    "pause": "Pause",
+    "replay": "Rejouer",
+    "shot": "Plan {n} sur {total} : {title}",
+    "openCase": "Ouvrir l'étude de cas : {title}",
+    "cta": "Voir les projets",
+    "hookA": "Affirmer, c'est facile.",
+    "hookB": "Voici les preuves.",
+    "claims": {
+      "scan": "ports ouverts, trouvés sur une machine dont je ne savais rien",
+      "train": "de précision en validation, entraîné à partir de zéro",
+      "measure": "erreurs sur 1 500 images de validation",
+      "encrypt": "chiffré dans votre navigateur avant l'envoi",
+      "game": "modes de jeu dans une seule version",
+      "languages": "langues, un seul site"
+    },
+    "endA": "Conçu pour être vérifié.",
+    "endB": "Pas seulement affirmé."
+  },
   "status": {
     "title": "Posture de sécurité en direct",
     "live": "en direct",

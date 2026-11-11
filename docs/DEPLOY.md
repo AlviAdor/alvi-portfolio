@@ -36,7 +36,7 @@ check it worked, and what to do if it didn't.
 |---|---|---|
 | 1.1 | `cd ~/alvi-portfolio && node -v` | `v20.9` or newer |
 | 1.2 | `npm ci` | finishes without errors |
-| 1.3 | `npm run verify` | ends with `✓ Compiled successfully`; prints `i18n OK: 260 keys × 6 locales` |
+| 1.3 | `npm run verify` | ends with `✓ Compiled successfully`; prints `i18n OK: … keys × 6 locales` |
 | 1.4 | `npm audit --omit=dev` | `found 0 vulnerabilities` |
 | 1.5 | `npm start` (leave running in a second terminal tab) | `Ready` on http://localhost:3000 |
 | 1.6 | `node scripts/smoke-test.mjs http://localhost:3000` | last line `N/N passed`; exit code 0 |

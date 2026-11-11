@@ -255,6 +255,160 @@
   @keyframes galaxy-drift {
     to { background-position: 420px 210px, -380px 190px, 520px -260px, 300px 300px, -460px 230px, 350px -175px, 610px 305px, -280px 140px, 0 0, 0 0; }
   }
+
+  /* ── evidence reel ─────────────────────────────────────────────────────────
+     Type is sized against the stage (cqw), not the viewport, so a frame reads
+     the same on a phone and on a wall display. */
+  .reel-claim {
+    font-size: clamp(2.5rem, 8.6cqw, 6.75rem);
+    font-weight: 600;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+  }
+  .reel-figure {
+    margin-top: 1.4cqw;
+    font-size: clamp(3.75rem, 16cqw, 12.5rem);
+    font-weight: 600;
+    line-height: 0.86;
+    letter-spacing: -0.055em;
+    font-variant-numeric: tabular-nums;
+  }
+  /* long figures (AES-256) hold one line at a smaller size */
+  .reel-figure[data-long] {
+    font-size: clamp(3rem, 11.4cqw, 9rem);
+    white-space: nowrap;
+  }
+  /* lines quoted from the artefact: live text, so they stay sharp at any pixel density */
+  .reel-readout {
+    margin: 0;
+    padding-inline: 1.2cqw;
+    border-inline-start: 1px solid var(--color-neon);
+    font-family: var(--font-mono);
+    font-size: clamp(0.72rem, 1.45cqw, 1.05rem);
+    line-height: 1.75;
+    color: var(--color-ink);
+    white-space: pre;
+  }
+  .reel-readout.text-right {
+    border-inline-start: 0;
+    border-inline-end: 1px solid var(--color-neon);
+  }
+  .reel-line {
+    margin-top: 1.6cqw;
+    font-size: clamp(0.95rem, 2.2cqw, 1.7rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  /* Japanese has no spaces to break on: break between phrases where the browser can */
+  html:lang(ja) .reel-claim, html:lang(ja) .reel-line { word-break: auto-phrase; }
+  html:lang(ja) .reel-claim { line-height: 1.14; }
+  html:lang(bn) .reel-claim { line-height: 1.28; }
+  html:lang(ja) .reel-line, html:lang(bn) .reel-line { line-height: 1.4; }
+
+  /* each word sits behind its own mask and is slammed up through it; the
+     padding keeps tall glyphs and tight tracking from being clipped */
+  .reel-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding: 0.14em 0.06em;
+    margin: -0.14em -0.06em;
+  }
+
+  /* a beat is off until the timeline (or, without motion, the active index) turns it on */
+  .reel-shot { visibility: hidden; opacity: 0; }
+  [data-reel-still] .reel-shot[data-active="true"] { visibility: visible; opacity: 1; }
+  .reel-fill { transform: scaleX(0); }
+  [data-reel-still] li[data-state="done"] .reel-fill,
+  [data-reel-still] li[data-state="active"] .reel-fill { transform: scaleX(1); }
+
+  /* The artefact plate is a size container, so the image box is computed in
+     CSS (cover or contain around a focus point) and the punch-in can be aimed
+     at an exact point of the image whatever the crop. */
+  .reel-plate { container-type: size; }
+  .reel-canvas {
+    --cw: max(100cqw, calc(100cqh * var(--ar)));
+    position: absolute;
+    width: var(--cw);
+    aspect-ratio: var(--ar);
+    left: calc((100cqw - var(--cw)) * var(--fx));
+    top: calc((100cqh - var(--cw) / var(--ar)) * var(--fy));
+    transform-origin: var(--ox) var(--oy);
+    will-change: transform;
+  }
+  .reel-canvas[data-fit="contain"] { --cw: min(100cqw, calc(100cqh * var(--ar))); }
+  /* without motion the artefact simply sits at the crop the cut would have settled on */
+  [data-reel-still] .reel-canvas { transform: scale(var(--rest)); }
+  [data-reel-still] .reel-ring { scale: calc(1 / var(--rest)); }
+  /* light-background plots are redrawn dark, so a cut never flashes white */
+  .reel-plot { filter: invert(1) hue-rotate(180deg); }
+
+  /* marks the detail the figure was read from */
+  .reel-ring {
+    position: absolute;
+    width: clamp(1.75rem, 6cqw, 3.5rem);
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    border: 1.5px solid var(--color-neon);
+    border-radius: 999px;
+    box-shadow: 0 0 0 1px rgb(6 8 13 / 0.6), 0 0 22px rgb(0 240 255 / 0.55);
+  }
+  .reel-ring::after {
+    content: "";
+    position: absolute;
+    inset: 42%;
+    border-radius: inherit;
+    background: var(--color-neon);
+  }
+
+  /* neutral scrim where the figure overlaps the artefact */
+  .reel-scrim { background: linear-gradient(to top, var(--color-abyss), transparent 26%); }
+  @media (min-width: 48rem) {
+    .reel-scrim[data-side="right"] { background: linear-gradient(to right, var(--color-abyss), rgb(6 8 13 / 0.45) 12%, transparent 30%); }
+    .reel-scrim[data-side="left"] { background: linear-gradient(to left, var(--color-abyss), rgb(6 8 13 / 0.45) 12%, transparent 30%); }
+    .reel-scrim[data-side="top"] { background: linear-gradient(to top, var(--color-abyss), transparent 22%); }
+    .reel-scrim[data-side="tall"] { background: none; }
+  }
+
+  /* the light that crosses the stage on every cut (a line, never a full-frame flash) */
+  .reel-sweep {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+    pointer-events: none;
+    border-right: 2px solid var(--color-neon);
+    background: linear-gradient(to right, transparent 80%, rgb(0 240 255 / 0.1));
+  }
+
+  /* the six endonyms share one grid cell and hard-cut through it */
+  .reel-langs {
+    display: grid;
+    font-size: clamp(2.5rem, 10.5cqw, 8rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--color-neon);
+  }
+  .reel-langs > span {
+    grid-area: 1 / 1;
+    justify-self: center;
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+  }
+  @media (min-width: 48rem) {
+    .reel-langs > span { justify-self: end; }
+  }
+  [data-reel-still] .reel-langs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.15em 0.6em;
+    padding-inline: 6cqw;
+    font-size: clamp(1.25rem, 4.4cqw, 3rem);
+  }
+  [data-reel-still] .reel-langs > span { visibility: visible; opacity: 1; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

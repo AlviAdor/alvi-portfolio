@@ -45,6 +45,27 @@
     "modeDefenseDesc": "Threat-defense matrix",
     "hint": "move · click · scroll"
   },
+  "reel": {
+    "label": "The proof, at speed",
+    "play": "Play",
+    "pause": "Pause",
+    "replay": "Replay",
+    "shot": "Shot {n} of {total}: {title}",
+    "openCase": "Open the case study: {title}",
+    "cta": "See the builds",
+    "hookA": "Claims are cheap.",
+    "hookB": "Here's the proof.",
+    "claims": {
+      "scan": "open ports, found on a host I knew nothing about",
+      "train": "validation accuracy, trained from scratch",
+      "measure": "mistakes in 1,500 validation images",
+      "encrypt": "encrypted in your browser before it is sent",
+      "game": "game modes in one build",
+      "languages": "languages, one site"
+    },
+    "endA": "Built to be checked.",
+    "endB": "Not just claimed."
+  },
   "status": {
     "title": "Live security posture",
     "live": "live",

@@ -56,6 +56,7 @@ Node ≥ 20.9.
 | # | Section | Notes |
 |---|---|---|
 | — | Hero | WebGL particle field with **Neural / Defense** modes, live security-posture panel (from `/api/status`) |
+| — | Reel | A 16-second evidence reel: fast cuts into real artefacts from the case studies (the Nmap scan, training curves, the confusion matrix, running builds), each stamped with the figure it proves. Plays only while on screen; with reduced motion it becomes a still sequence stepped by hand |
 | 01 | About | WebGL portrait with face scan and in-browser background segmentation; security + AI tracks; field notes |
 | 02 | Roadmap | Interactive merit graph: SSC → HSC → IELTS → AIUB, then security and AI lanes; goals in a separate dashed lane |
 | 03 | Labs | Three safe, in-browser widgets: firewall policy sandbox, model-confidence threshold (optional on-device camera), live audit of this site's headers |
@@ -72,7 +73,7 @@ Press <kbd>`</kbd> anywhere for the terminal (`help`, `roadmap`, `certs`, `secur
 
 English, Español, Français, Deutsch, 日本語 and বাংলা, via `next-intl` with locale-prefixed routes (`/`, `/fr`, `/bn/projects/…`). Japanese and Bengali glyphs come from self-hosted Noto fallbacks.
 
-**Scope, stated plainly:** the interface, hero, roadmap, labs, credentials, contact, footer and terminal are fully translated (260 strings × 6). The long-form narrative (About story, research summaries, case-study write-ups, security pillar text) stays in English, and non-English visitors see a one-time notice saying so. The translations have not had a native-speaker review yet; treat them as provisional, especially Japanese and Bengali.
+**Scope, stated plainly:** the interface, hero, roadmap, labs, credentials, contact, footer and terminal are fully translated (every interface string, with key parity across the six locales enforced by `npm run check:i18n`). The long-form narrative (About story, research summaries, case-study write-ups, security pillar text) stays in English, and non-English visitors see a one-time notice saying so. The translations have not had a native-speaker review yet; treat them as provisional, especially Japanese and Bengali.
 
 Edit strings in `messages/<locale>.json`; `npm run check:i18n` catches missing keys and broken placeholders.
 
@@ -112,6 +113,7 @@ All API routes are rate-limited and send `X-RateLimit-*` / `Retry-After` headers
 | `lib/education.ts` | Roadmap nodes (facts; text is in `messages/`) |
 | `lib/credentials.ts` | Credentials; `status: "earned"` only for things actually held |
 | `lib/labs.ts`, `lib/fer.ts` | Lab sample data and logic |
+| `lib/reel.ts` | The reel's beats: which artefact, where the cut lands, the figure shown |
 | `messages/*.json` | All translated interface text |
 
 ## Known, accepted items

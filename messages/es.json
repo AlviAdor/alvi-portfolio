@@ -45,6 +45,27 @@
     "modeDefenseDesc": "Matriz de defensa ante amenazas",
     "hint": "mueve · clic · desplaza"
   },
+  "reel": {
+    "label": "Las pruebas, a toda velocidad",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "replay": "Repetir",
+    "shot": "Toma {n} de {total}: {title}",
+    "openCase": "Abrir el caso de estudio: {title}",
+    "cta": "Ver los proyectos",
+    "hookA": "Afirmar es fácil.",
+    "hookB": "Aquí están las pruebas.",
+    "claims": {
+      "scan": "puertos abiertos, hallados en un equipo del que no sabía nada",
+      "train": "de precisión en validación, entrenado desde cero",
+      "measure": "errores en 1500 imágenes de validación",
+      "encrypt": "cifrado en tu navegador antes de enviarse",
+      "game": "modos de juego en una sola versión",
+      "languages": "idiomas, un solo sitio"
+    },
+    "endA": "Hecho para ser verificado.",
+    "endB": "No solo afirmado."
+  },
   "status": {
     "title": "Estado de seguridad en vivo",
     "live": "en vivo",
