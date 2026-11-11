@@ -77,6 +77,33 @@ await check("CSP has no 'unsafe-inline' for scripts", async () => {
   const scriptSrc = csp.split(";").find((d) => d.trim().startsWith("script-src")) ?? "";
   assert(!scriptSrc.includes("'unsafe-inline'"), scriptSrc.trim());
 });
+await check("CSP locks down <style>, <base> and plugins", async () => {
+  const csp = (await get("/")).headers.get("content-security-policy") ?? "";
+  const directive = (name) => csp.split(";").map((d) => d.trim()).find((d) => d.startsWith(`${name} `)) ?? "";
+  assert(/'nonce-/.test(directive("style-src-elem")) && !directive("style-src-elem").includes("'unsafe-inline'"), "style-src-elem is not nonce-only");
+  assert(directive("base-uri") === "base-uri 'none'", directive("base-uri") || "no base-uri");
+  assert(directive("object-src") === "object-src 'none'", directive("object-src") || "no object-src");
+  assert(directive("frame-ancestors") === "frame-ancestors 'none'", directive("frame-ancestors") || "no frame-ancestors");
+});
+await check("Permissions-Policy denies unused device features", async () => {
+  const policy = (await get("/")).headers.get("permissions-policy") ?? "";
+  const open = ["microphone", "geolocation", "payment", "usb", "serial", "hid", "bluetooth", "display-capture"].filter((f) => !policy.includes(`${f}=()`));
+  assert(open.length === 0, `not denied: ${open.join(", ")}`);
+  assert(policy.includes("camera=(self)"), "camera is not limited to this origin");
+});
+await check("security.txt is served and not expired", async () => {
+  const r = await get("/.well-known/security.txt");
+  assert(r.status === 200, `status ${r.status}`);
+  const text = await r.text();
+  assert(/^Contact: /m.test(text), "no Contact field");
+  const expires = Date.parse(text.match(/^Expires: (.+)$/m)?.[1] ?? "");
+  assert(Number.isFinite(expires) && expires > Date.now(), "Expires is missing or in the past: redeploy");
+  return `expires ${new Date(expires).toISOString().slice(0, 10)}`;
+});
+await check("home page carries the evidence reel", async () => {
+  const html = await (await get("/")).text();
+  assert(html.includes('id="reel"'), "no #reel section in the HTML");
+});
 
 // ── APIs ───────────────────────────────────────────────────────────────────
 let status;

@@ -81,8 +81,9 @@ Edit strings in `messages/<locale>.json`; `npm run check:i18n` catches missing k
 
 | Layer | Implementation |
 |---|---|
-| CSP | Per-request nonce + `strict-dynamic`, minted in `middleware.ts`; Next stamps it on its own scripts. Pages therefore render per request (data stays cached at the fetch layer) |
-| Headers | HSTS (preload), X-Frame-Options DENY, nosniff, Referrer-Policy, Permissions-Policy (camera only for this origin), COOP `same-origin-allow-popups`, CORP |
+| CSP | Per-request nonce + `strict-dynamic`, minted in `middleware.ts`; Next stamps it on its own scripts. `<style>` elements need the same nonce (only style attributes may be inline), `base-uri` and `object-src` are `'none'`. Pages therefore render per request (data stays cached at the fetch layer) |
+| Headers | HSTS (preload), X-Frame-Options DENY, nosniff, Referrer-Policy, Permissions-Policy (camera for this origin only; twenty other device features denied outright), COOP `same-origin-allow-popups`, CORP |
+| Disclosure | `/.well-known/security.txt` (RFC 9116), regenerated on every deploy so it cannot quietly expire |
 | Rate limiting | Upstash Redis token buckets (10 req/min/IP on every API; 3 delivered emails / 10 min); in-memory fallback. IPs are hashed before use |
 | Bot check | Cloudflare Turnstile, verified server-side with idempotency keys |
 | Form integrity | HMAC-SHA256 signed, single-use form tokens (min age 2.5 s, max 2 h, replay-blocked) |

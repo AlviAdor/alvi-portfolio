@@ -260,7 +260,7 @@
      Type is sized against the stage (cqw), not the viewport, so a frame reads
      the same on a phone and on a wall display. */
   .reel-claim {
-    font-size: clamp(2.5rem, 8.6cqw, 6.75rem);
+    font-size: clamp(1.9rem, 8.6cqw, 6.75rem);
     font-weight: 600;
     line-height: 0.96;
     letter-spacing: -0.045em;

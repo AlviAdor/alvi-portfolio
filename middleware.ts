@@ -21,7 +21,12 @@ function contentSecurityPolicy(nonce: string, dev: boolean): string {
   return [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'wasm-unsafe-eval' https:${dev ? " 'unsafe-eval'" : ""}`,
+    // Stylesheets and <style> elements must be same-origin or carry the nonce; only style
+    // attributes (React `style` props, canvas sizing) may be inline. `style-src` itself is
+    // the fallback for browsers that predate the -elem / -attr split.
     "style-src 'self' 'unsafe-inline'",
+    `style-src-elem 'self' 'nonce-${nonce}'`,
+    "style-src-attr 'unsafe-inline'",
     "img-src 'self' data: blob: https://avatars.githubusercontent.com",
     "font-src 'self'",
     `connect-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com${dev ? " ws: wss:" : ""}`,
@@ -30,7 +35,7 @@ function contentSecurityPolicy(nonce: string, dev: boolean): string {
     "media-src 'self' blob:",
     "manifest-src 'self'",
     "object-src 'none'",
-    "base-uri 'self'",
+    "base-uri 'none'",
     "form-action 'self'",
     "frame-ancestors 'none'",
     ...(dev ? [] : ["upgrade-insecure-requests"]),

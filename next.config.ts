@@ -12,8 +12,17 @@ const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  // camera only for this origin, only after an explicit click in the face-inference lab
-  { key: "Permissions-Policy", value: "camera=(self), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()" },
+  // Deny every powerful feature the site has no use for, in this document and in any frame.
+  // Camera stays available to this origin only, after an explicit click in the face-inference lab.
+  {
+    key: "Permissions-Policy",
+    value: [
+      "camera=(self)",
+      ...["accelerometer", "bluetooth", "browsing-topics", "display-capture", "gamepad", "geolocation", "gyroscope", "hid", "idle-detection", "local-fonts", "magnetometer", "microphone", "midi", "payment", "publickey-credentials-get", "screen-wake-lock", "serial", "usb", "window-management", "xr-spatial-tracking"].map(
+        (feature) => `${feature}=()`,
+      ),
+    ].join(", "),
+  },
   // allow-popups: the encrypted contact bridge needs window.opener from its popup
   { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
   { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
